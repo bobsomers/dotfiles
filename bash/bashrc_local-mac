@@ -1,0 +1,7 @@
+# Rewrite a few aliases because Mac is dumb.
+alias ls='ls -l'
+alias g='mvim --remote-silent'
+alias sug='sudo mvim --remote-silent'
+
+# Mac uses a enviroment variable to color ls output.
+export CLICOLOR=1
