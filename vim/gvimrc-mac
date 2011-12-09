@@ -1,0 +1,24 @@
+" GUI options for gvim.
+set mousehide
+set guioptions=agimrLt
+if has("gui_running")
+    set guifont=Monaco:h12
+    colorscheme xoria256
+    if !exists("g:vimrcloaded")
+        winpos 50 50
+        winsize 100 30
+        let g:vimrcloaded=1
+    endif
+endif
+:nohls
+
+" Set up the gui cursor to look nice. (Thanks to Derek Wyatt)
+set guicursor=n-v-c:block-Cursor-blinkon0
+set guicursor+=ve:ver35-Cursor
+set guicursor+=o:hor50-Cursor
+set guicursor+=i-ci:ver25-Cursor
+set guicursor+=r-cr:hor20-Cursor
+set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+" Rsync hook for /Code to synchronize local code files with cominor.
+au BufWritePost * :!~/bin/cominor-sync.py %:p
