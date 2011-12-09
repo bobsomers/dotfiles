@@ -1,0 +1,33 @@
+[submodule "vim/vimfiles/bundle/pathogen"]
+	path = vim/vimfiles/bundle/pathogen
+	url = gh:bobsomers/vim-pathogen.git
+[submodule "vim/vimfiles/bundle/xoria256"]
+	path = vim/vimfiles/bundle/xoria256
+	url = gh:bobsomers/xoria256.vim.git
+[submodule "vim/vimfiles/bundle/fugitive"]
+	path = vim/vimfiles/bundle/fugitive
+	url = gh:bobsomers/vim-fugitive.git
+[submodule "vim/vimfiles/bundle/easymotion"]
+	path = vim/vimfiles/bundle/easymotion
+	url = gh:bobsomers/vim-easymotion.git
+[submodule "vim/vimfiles/bundle/nerdtree"]
+	path = vim/vimfiles/bundle/nerdtree
+	url = gh:bobsomers/nerdtree
+[submodule "vim/vimfiles/bundle/indent_guides"]
+	path = vim/vimfiles/bundle/indent_guides
+	url = gh:bobsomers/vim-indent-guides.git
+[submodule "vim/vimfiles/bundle/surround"]
+	path = vim/vimfiles/bundle/surround
+	url = gh:bobsomers/vim-surround.git
+[submodule "vim/vimfiles/bundle/snipmate"]
+	path = vim/vimfiles/bundle/snipmate
+	url = gh:bobsomers/snipmate.vim.git
+[submodule "vim/vimfiles/bundle/tcomment"]
+	path = vim/vimfiles/bundle/tcomment
+	url = gh:bobsomers/tcomment_vim.git
+[submodule "vim/vimfiles/bundle/command-t"]
+	path = vim/vimfiles/bundle/command-t
+	url = gh:bobsomers/Command-T.git
+[submodule "vim/vimfiles/bundle/racket"]
+	path = vim/vimfiles/bundle/racket
+	url = gh:bobsomers/vim-racket.git
