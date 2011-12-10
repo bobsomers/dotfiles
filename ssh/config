@@ -28,6 +28,7 @@ Host applejack
     User bsomers
     Port 30012
     IdentityFile ~/.ssh/bobAT5tubborn_rsa
+    ForwardAgent yes
 
 # 5tubborn Git
 Host git5tub
