@@ -1,0 +1,125 @@
+# GitHub (bobsomers)
+Host gh
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/bobsomers_rsa
+
+# GitHub (old)
+Host gh-old
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/bobATbobsomers_rsa
+
+# Bitbucket (bobsomers)
+Host bb
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/bobsomers_rsa
+
+# Bitbucket (old)
+Host bb-old
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/bobATbobsomers_rsa
+
+# Applejack (Linode)
+Host applejack
+    HostName applejack.5tubborn.com
+    User bsomers
+    Port 30012
+    IdentityFile ~/.ssh/bobAT5tubborn_rsa
+
+# 5tubborn Git
+Host git5tub
+    HostName 5tubborn.com
+    User git
+    Port 30012
+    IdentityFile ~/.ssh/bobAT5tubborn_rsa
+
+# Twilight (Router/Research #1)
+Host twilight
+    HostName equestria.bobsomers.com 
+    User bsomers
+    Port 30012
+    ForwardAgent yes
+
+# Rainbow Dash (Desktop)
+Host rainbowdash
+    Hostname 10.11.12.21
+    User bsomers
+    IdentityFile ~/.ssh/bobATbobsomers_rsa
+
+# Fluttershy (Research #2)
+Host fluttershy
+    HostName 10.11.12.25
+    User bsomers
+    IdentityFile ~/.ssh/bobATbobsomers_rsa
+
+# Vogon (Cal Poly)
+Host vogon
+    HostName vogon.csc.calpoly.edu
+    User rsomers
+
+# Multicore (Cal Poly)
+Host multicore
+    HostName multicore.csc.calpoly.edu
+    User rsomers
+
+# Max's Bioinformatics Machine (temp)
+Host biomax
+    HostName maxinslo.homeip.net
+    User bob
+
+# Cominor (iFixit)
+Host cominor
+   HostName cominor.com
+   User bsomers
+   IdentityFile ~/.ssh/bobsomers_rsa
+
+# Load Balancer (iFixit)
+Host lb-ifixit
+   HostName ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# Load Balancer (Dozuki)
+Host lb-dozuki
+   HostName dozuki.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# App Machine 0 (iFixit)
+Host app0
+   HostName app0.ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# App Machine 1 (iFixit)
+Host app1
+   HostName app1.ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# App Machine 2 (iFixit)
+Host app2
+   HostName app2.ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# App Machine 3 (iFixit)
+Host app3
+   HostName app3.ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# Database Master (iFixit)
+Host db-master
+   HostName db.ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
+
+# Database Slave (iFixit)
+Host db-slave
+   HostName slave.ifixit.com
+   User root
+   IdentityFile ~/.ssh/ifixit_rsa
