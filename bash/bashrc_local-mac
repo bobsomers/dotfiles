@@ -5,3 +5,8 @@ alias sug='sudo mvim --remote-silent'
 
 # Mac uses a enviroment variable to color ls output.
 export CLICOLOR=1
+
+# Load autojump
+if [ -f `brew --prefix`/etc/autojump ]; then
+   . `brew --prefix`/etc/autojump
+fi
