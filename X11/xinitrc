@@ -13,5 +13,8 @@ xmodmap ~/.Xmodmap
 # Disable that blasted speaker beeping.
 xset -b
 
+# If we're running in VirtualBox...
+#VBoxClient-all &
+
 # Fire off the window manager.
 exec awesome
