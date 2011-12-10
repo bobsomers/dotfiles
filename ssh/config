@@ -76,6 +76,7 @@ Host cominor
    HostName cominor.com
    User bsomers
    IdentityFile ~/.ssh/bobsomers_rsa
+   ForwardAgent yes
 
 # Load Balancer (iFixit)
 Host lb-ifixit
