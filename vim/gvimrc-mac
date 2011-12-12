@@ -27,3 +27,15 @@ au BufWritePost * :!~/bin/cominor-sync.py %:p
 set tabstop=3
 set softtabstop=3
 set shiftwidth=3
+
+" =============================================================================
+"       INDENT GUIDES SETTINGS 
+" =============================================================================
+
+" Visual settings (single column, start at 2nd level indent).
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup=1
+
+" Toggle display of indent guides with F3.
+nmap <F3> :IndentGuidesToggle<CR>

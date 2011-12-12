@@ -19,3 +19,15 @@ set guicursor+=o:hor50-Cursor
 set guicursor+=i-ci:ver25-Cursor
 set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+" =============================================================================
+"       INDENT GUIDES SETTINGS 
+" =============================================================================
+
+" Visual settings (single column, start at 2nd level indent).
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_enable_on_vim_startup=1
+
+" Toggle display of indent guides with F3.
+nmap <F3> :IndentGuidesToggle<CR>
