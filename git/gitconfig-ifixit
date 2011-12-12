@@ -1,0 +1,7 @@
+[user]
+	name = Bob Somers
+	email = bob@ifixit.com
+[github]
+	user = bobsomers
+[core]
+	autocrlf = input
