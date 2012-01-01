@@ -31,3 +31,6 @@
 [submodule "vim/vimfiles/bundle/racket"]
 	path = vim/vimfiles/bundle/racket
 	url = gh:bobsomers/vim-racket.git
+[submodule "vim/vimfiles/bundle/syntastic"]
+	path = vim/vimfiles/bundle/syntastic
+	url = gh:bobsomers/syntastic
