@@ -1,16 +1,13 @@
-# GitHub
 Host gh
     HostName github.com
     User git
     IdentityFile ~/.ssh/bobsomers_rsa
 
-# Bitbucket
 Host bb
     HostName bitbucket.org
     User git
     IdentityFile ~/.ssh/bobsomers_rsa
 
-# Applejack (Linode)
 Host applejack
     HostName applejack.5tubborn.com
     User bsomers
@@ -18,89 +15,92 @@ Host applejack
     IdentityFile ~/.ssh/bobsomers_rsa
     ForwardAgent yes
 
-# Twilight (Router/Research #1)
-Host twilight
-    HostName equestria.bobsomers.com 
-    User bsomers
-    Port 30012
-    IdentityFile ~/.ssh/bobsomers_rsa
-    ForwardAgent yes
-
-# Rainbow Dash (Desktop)
 Host rainbowdash
     Hostname 10.11.12.21
     User bsomers
     IdentityFile ~/.ssh/bobsomers_rsa
     ForwardAgent yes
 
-# Fluttershy (Research #2)
 Host fluttershy
+    HostName fluttershy.bobsomers.com
+    User bsomers
+    IdentityFile ~/.ssh/bobsomers_rsa
+    ForwardAgent yes
+
+Host rarity
     HostName 10.11.12.25
     User bsomers
     IdentityFile ~/.ssh/bobsomers_rsa
     ForwardAgent yes
 
-# Vogon (Cal Poly)
 Host vogon
     HostName vogon.csc.calpoly.edu
     User rsomers
+    IdentityFile ~/.ssh/bobsomers_rsa
+    ForwardAgent yes
 
-# Multicore (Cal Poly)
 Host multicore
     HostName multicore.csc.calpoly.edu
     User rsomers
+    IdentityFile ~/.ssh/bobsomers_rsa
+    ForwardAgent yes
 
-# Cominor (iFixit)
+Host tesla
+    HostName tesla.csc.calpoly.edu
+    User rsomers
+    IdentityFile ~/.ssh/bobsomers_rsa
+    ForwardAgent yes
+
 Host cominor
-   HostName cominor.com
-   User bsomers
-   IdentityFile ~/.ssh/bobsomers_rsa
-   ForwardAgent yes
+    HostName cominor.com
+    User bsomers
+    IdentityFile ~/.ssh/bobsomers_rsa
+    ForwardAgent yes
 
-# Load Balancer (iFixit)
 Host lb-ifixit
-   HostName ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# Load Balancer (Dozuki)
 Host lb-dozuki
-   HostName dozuki.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName dozuki.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# App Machine 0 (iFixit)
 Host app0
-   HostName app0.ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName app0.ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# App Machine 1 (iFixit)
 Host app1
-   HostName app1.ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName app1.ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# App Machine 2 (iFixit)
 Host app2
-   HostName app2.ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName app2.ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# App Machine 3 (iFixit)
 Host app3
-   HostName app3.ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName app3.ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# Database Master (iFixit)
 Host db-master
-   HostName db.ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName db.ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
 
-# Database Slave (iFixit)
 Host db-slave
-   HostName slave.ifixit.com
-   User root
-   IdentityFile ~/.ssh/ifixit_rsa
+    HostName slave.ifixit.com
+    User root
+    IdentityFile ~/.ssh/ifixit_rsa
+    ForwardAgent yes
