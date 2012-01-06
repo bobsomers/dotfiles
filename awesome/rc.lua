@@ -6,6 +6,8 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+-- Vicious widget library
+require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -69,8 +71,102 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
+-- Create a time widget
+timewidget = widget({type = "textbox"})
+timewidget.width = 55
+timewidget.align = "left"
+vicious.register(timewidget, vicious.widgets.date, " %l:%M %P", 2)
+timeicon = widget({type = "imagebox"})
+timeicon.image = image(beautiful.widget_time)
+
+-- Create a date widget
+datewidget = widget({type = "textbox"})
+datewidget.width = 75
+datewidget.align = "left"
+vicious.register(datewidget, vicious.widgets.date, "  %F", 2)
+dateicon = widget({type = "imagebox"})
+dateicon.image = image(beautiful.widget_date)
+
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" })
+--mytextclock = awful.widget.textclock({ align = "right" })
+
+-- Create a network usage widget
+netdownwidget = widget({type = "textbox"})
+netdownwidget.width = 60
+netdownwidget.align = "left"
+vicious.register(netdownwidget, vicious.widgets.net, " ${eth0 down_kb} KB", 1)
+netdownicon = widget({type = "imagebox"})
+netdownicon.image = image(beautiful.widget_netdown)
+
+-- Create a network usage widget
+netupwidget = widget({type = "textbox"})
+netupwidget.width = 60
+netupwidget.align = "left"
+vicious.register(netupwidget, vicious.widgets.net, " ${eth0 up_kb} KB", 1)
+netupicon = widget({type = "imagebox"})
+netupicon.image = image(beautiful.widget_netup)
+
+-- Create a weather widget
+weatherwidget = widget({type = "textbox"})
+weatherwidget.width = 90
+weatherwidget.align = "left"
+vicious.register(weatherwidget, vicious.widgets.weather, " ${tempf} F, ${sky}", 300, "KSBP")
+weathericon = widget({type = "imagebox"})
+weathericon.image = image(beautiful.widget_weather)
+
+-- Create CPU usage widgets
+cpuwidget1 = widget({type = "textbox"})
+cpuwidget1.width = 40
+cpuwidget1.align = "left"
+vicious.register(cpuwidget1, vicious.widgets.cpu, "  $2%", 1)
+cpuwidget2 = widget({type = "textbox"})
+cpuwidget2.width = 40
+cpuwidget2.align = "left"
+vicious.register(cpuwidget2, vicious.widgets.cpu, "  $3%", 1)
+cpuicon = widget({type = "imagebox"})
+cpuicon.image = image(beautiful.widget_cpu)
+
+-- Create a memory usage widget
+memwidget = widget({type = "textbox"})
+memwidget.width = 45
+memwidget.align = "left"
+vicious.register(memwidget, vicious.widgets.mem, "  $1%", 1)
+memicon = widget({type = "imagebox"})
+memicon.image = image(beautiful.widget_mem)
+
+-- Create a load widget
+loadshortwidget = widget({type = "textbox"})
+loadshortwidget.width = 35
+loadshortwidget.align = "left"
+vicious.register(loadshortwidget, vicious.widgets.uptime, "  $4", 1)
+loadmediumwidget = widget({type = "textbox"})
+loadmediumwidget.width = 30
+loadmediumwidget.align = "left"
+vicious.register(loadmediumwidget, vicious.widgets.uptime, "$5", 1)
+loadlongwidget = widget({type = "textbox"})
+loadlongwidget.width = 40
+loadlongwidget.align = "left"
+vicious.register(loadlongwidget, vicious.widgets.uptime, "$6", 1)
+loadicon = widget({type = "imagebox"})
+loadicon.image = image(beautiful.widget_load)
+
+-- Create disk usage widgets
+diskrootwidget = widget({type = "textbox"})
+diskrootwidget.width = 45
+diskrootwidget.align = "left"
+vicious.register(diskrootwidget, vicious.widgets.fs, function(widget, args)
+    local percent = args["{/ used_mb}"] / args["{/ size_mb}"] * 100
+    return string.format(" %d%% /", percent)
+end, 5)
+diskhomewidget = widget({type = "textbox"})
+diskhomewidget.width = 65
+diskhomewidget.align = "left"
+vicious.register(diskhomewidget, vicious.widgets.fs, function(widget, args)
+    local percent = args["{/home used_mb}"] / args["{/home size_mb}"] * 100
+    return string.format(" %d%% /home", percent)
+end, 5)
+diskicon = widget({type = "imagebox"})
+diskicon.image = image(beautiful.widget_disk)
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -140,7 +236,7 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height="16", screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -150,7 +246,18 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        mytextclock,
+        timewidget, timeicon,
+        s == 1 and datewidget or nil, s == 1 and dateicon or nil,
+        s == 1 and weatherwidget or nil, s == 1 and weathericon or nil,
+        --mytextclock,
+        s == 1 and netupwidget or nil, s == 1 and netupicon or nil,
+        s == 1 and netdownwidget or nil, s == 1 and netdownicon or nil,
+        s == 1 and diskhomewidget or nil, s == 1 and diskicon or nil,
+        s == 1 and diskrootwidget or nil, s == 1 and diskicon or nil,
+        s == 1 and loadlongwidget or nil, s == 1 and loadmediumwidget or nil, s == 1 and loadshortwidget or nil, s == 1 and loadicon or nil,
+        s == 1 and memwidget or nil, s == 1 and memicon or nil,
+        s == 1 and cpuwidget2 or nil, s == 1 and cpuicon or nil,
+        s == 1 and cpuwidget1 or nil, s == 1 and cpuicon or nil,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft

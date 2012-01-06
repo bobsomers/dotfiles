@@ -121,6 +121,18 @@ theme.titlebar_maximized_button_normal_active = "/home/bsomers/.config/awesome/t
 theme.titlebar_maximized_button_focus_inactive  = "/home/bsomers/.config/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = "/home/bsomers/.config/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
 -- }}}
+
+-- {{{ Widgets
+theme.widget_time = "/home/bsomers/.config/awesome/themes/zenburn/icons/clock.png"
+theme.widget_date = "/home/bsomers/.config/awesome/themes/zenburn/icons/calendar.png"
+theme.widget_weather = "/home/bsomers/.config/awesome/themes/zenburn/icons/weather_cloudy.png"
+theme.widget_netdown = "/home/bsomers/.config/awesome/themes/zenburn/icons/arrow_down.png"
+theme.widget_netup = "/home/bsomers/.config/awesome/themes/zenburn/icons/arrow_up.png"
+theme.widget_cpu = "/home/bsomers/.config/awesome/themes/zenburn/icons/computer.png"
+theme.widget_mem = "/home/bsomers/.config/awesome/themes/zenburn/icons/database_gear.png"
+theme.widget_disk = "/home/bsomers/.config/awesome/themes/zenburn/icons/drive_disk.png"
+theme.widget_load = "/home/bsomers/.config/awesome/themes/zenburn/icons/chart_bar.png"
+-- }}}
 -- }}}
 
 return theme
