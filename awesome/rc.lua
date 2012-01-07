@@ -83,7 +83,7 @@ timeicon.image = image(beautiful.widget_time)
 datewidget = widget({type = "textbox"})
 datewidget.width = 75
 datewidget.align = "left"
-vicious.register(datewidget, vicious.widgets.date, "  %F", 2)
+vicious.register(datewidget, vicious.widgets.date, "  %a %b %e", 2)
 dateicon = widget({type = "imagebox"})
 dateicon.image = image(beautiful.widget_date)
 
