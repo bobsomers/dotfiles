@@ -168,6 +168,10 @@ end, 5)
 diskicon = widget({type = "imagebox"})
 diskicon.image = image(beautiful.widget_disk)
 
+-- Create a systray spacer
+systrayspacerwidget = widget({type = "textbox"})
+systrayspacerwidget.width = 10
+
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -258,7 +262,7 @@ for s = 1, screen.count() do
         s == 1 and memwidget or nil, s == 1 and memicon or nil,
         s == 1 and cpuwidget2 or nil, s == 1 and cpuicon or nil,
         s == 1 and cpuwidget1 or nil, s == 1 and cpuicon or nil,
-        s == 1 and mysystray or nil,
+        systrayspacerwidget, s == 1 and mysystray or nil, systrayspacerwidget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
