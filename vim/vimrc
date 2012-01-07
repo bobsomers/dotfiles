@@ -193,3 +193,14 @@ nnoremap <silent> ,b :CommandTBuffer<CR>
 
 " Set author.
 let g:snips_author='Bob Somers'
+
+
+" =============================================================================
+"       SYNTASTIC SETTINGS
+" =============================================================================
+
+" Syntastic is not good enough at C/C++ yet... specifically because of its
+" abysmal handling of include paths.
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['c', 'cpp'] }
