@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "awsetbg /home/bsomers/dotfiles/images/sunset_departure_1680x1050.jpg" }
+theme.wallpaper_cmd = { "awsetbg -c /home/bsomers/dotfiles/images/sunset_departure_1680x1050.jpg" }
 -- }}}
 
 -- {{{ Styles
