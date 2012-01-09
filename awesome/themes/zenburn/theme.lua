@@ -12,7 +12,8 @@ theme.wallpaper_cmd = { "awsetbg -c /home/bsomers/dotfiles/images/sunset_departu
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 8"
+--theme.font      = "sans 8"
+theme.font      = "Droid Sans Mono 8"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
@@ -134,5 +135,9 @@ theme.widget_disk = "/home/bsomers/.config/awesome/themes/zenburn/icons/drive_di
 theme.widget_load = "/home/bsomers/.config/awesome/themes/zenburn/icons/chart_bar.png"
 -- }}}
 -- }}}
+
+--- {{{ Naughty Notifications Config
+naughty.config.default_preset.font = "Ubuntu 11"
+--}}}
 
 return theme
