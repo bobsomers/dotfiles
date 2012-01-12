@@ -33,7 +33,7 @@ Host rarity
     IdentityFile ~/.ssh/bobsomers_rsa
     ForwardAgent yes
 
-Host vboxbm
+Host vboxvm
     HostName 10.11.12.23
     User bsomers
     IdentityFile ~/.ssh/bobsomers_rsa
