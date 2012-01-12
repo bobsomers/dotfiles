@@ -33,6 +33,12 @@ Host rarity
     IdentityFile ~/.ssh/bobsomers_rsa
     ForwardAgent yes
 
+Host vboxbm
+    HostName 10.11.12.23
+    User bsomers
+    IdentityFile ~/.ssh/bobsomers_rsa
+    ForwardAgent yes
+
 Host vogon
     HostName vogon.csc.calpoly.edu
     User rsomers
