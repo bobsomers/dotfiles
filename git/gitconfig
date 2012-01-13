@@ -5,3 +5,5 @@
 	user = bobsomers
 [core]
 	autocrlf = input
+[color]
+	ui = true
