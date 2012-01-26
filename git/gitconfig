@@ -1,9 +1,10 @@
 [user]
-	name = Bob Somers
-	email = bob@bobsomers.com
+    name = Bob Somers
+    email = bob@bobsomers.com
 [github]
-	user = bobsomers
+    user = bobsomers
 [core]
-	autocrlf = input
+    autocrlf = input
+    excludesfile = ~/dotfiles/git/gitignore
 [color]
-	ui = true
+    ui = true
