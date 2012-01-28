@@ -1,112 +1,112 @@
 Host gh
     HostName github.com
     User git
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
 
 Host bb
     HostName bitbucket.org
     User git
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
 
 Host applejack
     HostName applejack.5tubborn.com
     User bsomers
     Port 30012
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host rainbowdash
     Hostname 10.11.12.21
     User bsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host fluttershy
     HostName fluttershy.bobsomers.com
     User bsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host rarity
     HostName 10.11.12.25
     User bsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host vboxvm
     HostName 10.11.12.23
     User bsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host vogon
     HostName vogon.csc.calpoly.edu
     User rsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host multicore
     HostName multicore.csc.calpoly.edu
     User rsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host tesla
     HostName tesla.csc.calpoly.edu
     User rsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host cominor
     HostName cominor.com
     User bsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
 Host lb-ifixit
     HostName ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host lb-dozuki
     HostName dozuki.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host app0
     HostName app0.ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host app1
     HostName app1.ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host app2
     HostName app2.ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host app3
     HostName app3.ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host db-master
     HostName db.ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
 Host db-slave
     HostName slave.ifixit.com
     User root
-    IdentityFile ~/.ssh/ifixit_rsa
+    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
