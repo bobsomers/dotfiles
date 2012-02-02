@@ -28,3 +28,6 @@
 [submodule "vim/vimfiles/bundle/syntastic"]
 	path = vim/vimfiles/bundle/syntastic
 	url = gh:bobsomers/syntastic
+[submodule "vim/vimfiles/bundle/ultisnips"]
+	path = vim/vimfiles/bundle/ultisnips
+	url = gh:bobsomers/UltiSnips.git

@@ -188,12 +188,12 @@ nnoremap <silent> ,t :CommandT<CR>
 nnoremap <silent> ,b :CommandTBuffer<CR>
 
 " =============================================================================
-"       SNIPMATE SETTINGS
+"       ULTISNIPS SETTINGS
 " =============================================================================
 
-" Set author.
-let g:snips_author='Bob Somers'
-
+" Move between fields with tab and shift-tab instead of ctrl-j and ctrl-k
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " =============================================================================
 "       SYNTASTIC SETTINGS
