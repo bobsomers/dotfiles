@@ -19,18 +19,12 @@
 [submodule "vim/vimfiles/bundle/surround"]
 	path = vim/vimfiles/bundle/surround
 	url = gh:bobsomers/vim-surround.git
-[submodule "vim/vimfiles/bundle/snipmate"]
-	path = vim/vimfiles/bundle/snipmate
-	url = gh:bobsomers/snipmate.vim.git
 [submodule "vim/vimfiles/bundle/tcomment"]
 	path = vim/vimfiles/bundle/tcomment
 	url = gh:bobsomers/tcomment_vim.git
 [submodule "vim/vimfiles/bundle/command-t"]
 	path = vim/vimfiles/bundle/command-t
 	url = gh:bobsomers/Command-T.git
-[submodule "vim/vimfiles/bundle/racket"]
-	path = vim/vimfiles/bundle/racket
-	url = gh:bobsomers/vim-racket.git
 [submodule "vim/vimfiles/bundle/syntastic"]
 	path = vim/vimfiles/bundle/syntastic
 	url = gh:bobsomers/syntastic
