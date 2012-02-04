@@ -124,15 +124,15 @@ theme.titlebar_maximized_button_normal_inactive = "/home/bsomers/.config/awesome
 -- }}}
 
 -- {{{ Widgets
-theme.widget_time = "/home/bsomers/.config/awesome/themes/zenburn/icons/clock.png"
-theme.widget_date = "/home/bsomers/.config/awesome/themes/zenburn/icons/calendar.png"
-theme.widget_weather = "/home/bsomers/.config/awesome/themes/zenburn/icons/weather_cloudy.png"
-theme.widget_netdown = "/home/bsomers/.config/awesome/themes/zenburn/icons/arrow_down.png"
-theme.widget_netup = "/home/bsomers/.config/awesome/themes/zenburn/icons/arrow_up.png"
-theme.widget_cpu = "/home/bsomers/.config/awesome/themes/zenburn/icons/computer.png"
-theme.widget_mem = "/home/bsomers/.config/awesome/themes/zenburn/icons/database_gear.png"
-theme.widget_disk = "/home/bsomers/.config/awesome/themes/zenburn/icons/drive_disk.png"
-theme.widget_load = "/home/bsomers/.config/awesome/themes/zenburn/icons/chart_bar.png"
+theme.widget_time = "/home/bsomers/.config/awesome/themes/zenburn/icons/time.png"
+theme.widget_date = "/home/bsomers/.config/awesome/themes/zenburn/icons/date.png"
+theme.widget_weather = "/home/bsomers/.config/awesome/themes/zenburn/icons/weather.png"
+theme.widget_netdown = "/home/bsomers/.config/awesome/themes/zenburn/icons/download.png"
+theme.widget_netup = "/home/bsomers/.config/awesome/themes/zenburn/icons/upload.png"
+theme.widget_cpu = "/home/bsomers/.config/awesome/themes/zenburn/icons/cpu.png"
+theme.widget_mem = "/home/bsomers/.config/awesome/themes/zenburn/icons/ram.png"
+--theme.widget_disk = "/home/bsomers/.config/awesome/themes/zenburn/icons/drive_disk.png"
+--theme.widget_load = "/home/bsomers/.config/awesome/themes/zenburn/icons/chart_bar.png"
 -- }}}
 -- }}}
 

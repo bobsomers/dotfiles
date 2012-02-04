@@ -135,38 +135,38 @@ memicon = widget({type = "imagebox"})
 memicon.image = image(beautiful.widget_mem)
 
 -- Create a load widget
-loadshortwidget = widget({type = "textbox"})
-loadshortwidget.width = 35
-loadshortwidget.align = "left"
-vicious.register(loadshortwidget, vicious.widgets.uptime, "  $4", 1)
-loadmediumwidget = widget({type = "textbox"})
-loadmediumwidget.width = 30
-loadmediumwidget.align = "left"
-vicious.register(loadmediumwidget, vicious.widgets.uptime, "$5", 1)
-loadlongwidget = widget({type = "textbox"})
-loadlongwidget.width = 40
-loadlongwidget.align = "left"
-vicious.register(loadlongwidget, vicious.widgets.uptime, "$6", 1)
-loadicon = widget({type = "imagebox"})
-loadicon.image = image(beautiful.widget_load)
+--loadshortwidget = widget({type = "textbox"})
+--loadshortwidget.width = 35
+--loadshortwidget.align = "left"
+--vicious.register(loadshortwidget, vicious.widgets.uptime, "  $4", 1)
+--loadmediumwidget = widget({type = "textbox"})
+--loadmediumwidget.width = 30
+--loadmediumwidget.align = "left"
+--vicious.register(loadmediumwidget, vicious.widgets.uptime, "$5", 1)
+--loadlongwidget = widget({type = "textbox"})
+--loadlongwidget.width = 40
+--loadlongwidget.align = "left"
+--vicious.register(loadlongwidget, vicious.widgets.uptime, "$6", 1)
+--loadicon = widget({type = "imagebox"})
+--loadicon.image = image(beautiful.widget_load)
 
 -- Create disk usage widgets
-diskrootwidget = widget({type = "textbox"})
-diskrootwidget.width = 45
-diskrootwidget.align = "left"
-vicious.register(diskrootwidget, vicious.widgets.fs, function(widget, args)
-    local percent = args["{/ used_mb}"] / args["{/ size_mb}"] * 100
-    return string.format(" %d%% /", percent)
-end, 5)
-diskhomewidget = widget({type = "textbox"})
-diskhomewidget.width = 65
-diskhomewidget.align = "left"
-vicious.register(diskhomewidget, vicious.widgets.fs, function(widget, args)
-    local percent = args["{/home used_mb}"] / args["{/home size_mb}"] * 100
-    return string.format(" %d%% /home", percent)
-end, 5)
-diskicon = widget({type = "imagebox"})
-diskicon.image = image(beautiful.widget_disk)
+--diskrootwidget = widget({type = "textbox"})
+--diskrootwidget.width = 45
+--diskrootwidget.align = "left"
+--vicious.register(diskrootwidget, vicious.widgets.fs, function(widget, args)
+--    local percent = args["{/ used_mb}"] / args["{/ size_mb}"] * 100
+--    return string.format(" %d%% /", percent)
+--end, 5)
+--diskhomewidget = widget({type = "textbox"})
+--diskhomewidget.width = 65
+--diskhomewidget.align = "left"
+--vicious.register(diskhomewidget, vicious.widgets.fs, function(widget, args)
+--    local percent = args["{/home used_mb}"] / args["{/home size_mb}"] * 100
+--    return string.format(" %d%% /home", percent)
+--end, 5)
+--diskicon = widget({type = "imagebox"})
+--diskicon.image = image(beautiful.widget_disk)
 
 -- Create a systray spacer
 systrayspacerwidget = widget({type = "textbox"})
