@@ -73,7 +73,7 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- {{{ Wibox
 -- Create a time widget
 timewidget = widget({type = "textbox"})
-timewidget.width = 55
+timewidget.width = 60
 timewidget.align = "left"
 vicious.register(timewidget, vicious.widgets.date, " %l:%M %P", 2)
 timeicon = widget({type = "imagebox"})
@@ -81,7 +81,7 @@ timeicon.image = image(beautiful.widget_time)
 
 -- Create a date widget
 datewidget = widget({type = "textbox"})
-datewidget.width = 75
+datewidget.width = 80
 datewidget.align = "left"
 vicious.register(datewidget, vicious.widgets.date, "  %a %b %e", 2)
 dateicon = widget({type = "imagebox"})
@@ -108,7 +108,7 @@ netupicon.image = image(beautiful.widget_netup)
 
 -- Create a weather widget
 weatherwidget = widget({type = "textbox"})
-weatherwidget.width = 90
+weatherwidget.width = 80
 weatherwidget.align = "left"
 vicious.register(weatherwidget, vicious.widgets.weather, " ${tempf} F, ${sky}", 300, "KSBP")
 weathericon = widget({type = "imagebox"})
@@ -116,11 +116,11 @@ weathericon.image = image(beautiful.widget_weather)
 
 -- Create CPU usage widgets
 cpuwidget1 = widget({type = "textbox"})
-cpuwidget1.width = 40
+cpuwidget1.width = 60
 cpuwidget1.align = "left"
 vicious.register(cpuwidget1, vicious.widgets.cpu, "  $2%", 1)
 cpuwidget2 = widget({type = "textbox"})
-cpuwidget2.width = 40
+cpuwidget2.width = 60
 cpuwidget2.align = "left"
 vicious.register(cpuwidget2, vicious.widgets.cpu, "  $3%", 1)
 cpuicon = widget({type = "imagebox"})
@@ -128,7 +128,7 @@ cpuicon.image = image(beautiful.widget_cpu)
 
 -- Create a memory usage widget
 memwidget = widget({type = "textbox"})
-memwidget.width = 45
+memwidget.width = 60
 memwidget.align = "left"
 vicious.register(memwidget, vicious.widgets.mem, "  $1%", 1)
 memicon = widget({type = "imagebox"})
