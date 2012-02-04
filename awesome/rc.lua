@@ -334,7 +334,14 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+
+    -- Volume keys (for Apple aluminum keyboard)
+    -- Expects that you're using PulseAudio, and have pulseaudio_ctl from the
+    -- AUR installed...
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("mute_toggle") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("vol_down") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("vol_up") end)
 )
 
 clientkeys = awful.util.table.join(
