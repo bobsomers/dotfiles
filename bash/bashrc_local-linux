@@ -1,2 +1,2 @@
 # Use keychain to keep ssh keys loaded.
-eval `keychain --eval --agents ssh bobsomers_rsa`
+eval `keychain --eval --agents ssh ~/keys/bobsomers_rsa`

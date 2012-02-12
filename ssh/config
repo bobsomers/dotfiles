@@ -21,6 +21,11 @@ Host rainbowdash
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
+Host pinkiepie
+    Hostname 10.11.12.27
+    User bsomers
+    IdentityFile ~/keys/bobsomers_rsa
+
 Host fluttershy
     HostName fluttershy.bobsomers.com
     User bsomers
