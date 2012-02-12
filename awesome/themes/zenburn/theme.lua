@@ -13,7 +13,7 @@ theme.wallpaper_cmd = { "awsetbg -c /home/bsomers/dotfiles/images/arch_1680x1050
 
 -- {{{ Styles
 --theme.font      = "sans 8"
-theme.font      = "Droid Sans Mono 8"
+theme.font      = "Dina 10"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
