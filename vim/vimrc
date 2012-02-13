@@ -46,7 +46,7 @@ set path=.,/usr/include/**,/usr/local/include/**
 set shellslash
 
 " Use the visual bell instead of beeping like crazy.
-set visualbell
+"set visualbell
 
 " Allow backspacing over indents, end-of-line, and the start of insert.
 set backspace=indent,eol,start
