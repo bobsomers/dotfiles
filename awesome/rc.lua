@@ -90,12 +90,23 @@ awful.widget.layout.margins[datewidget] = {top = 1, right = 3}
 -- Create a weather widget
 weatherwidget = widget({type = "textbox"})
 weatherwidget.align = "left"
-vicious.register(weatherwidget, vicious.widgets.weather, " ${tempf}F, ${sky}", 300, "KSBP")
+vicious.register(weatherwidget, vicious.widgets.weather, "${tempf}F, ${sky}", 300, "KSBP")
 awful.widget.layout.margins[weatherwidget] = {top = 1, right = 10}
+
+-- Create a battery widget (only relevant on laptop)
+batterywidget = widget({type = "textbox"})
+batterywidget.align = "left"
+vicious.register(batterywidget, vicious.widgets.bat, function(widget, args)
+    if args[1] == "-" then
+        return table.concat{"B:", args[2], "%"}
+    end
+    return table.concat{"B:", args[2], "%+"}
+end, 3, "BAT0")
+awful.widget.layout.margins[batterywidget] = {top = 1, right = 20}
 
 -- Create a volume widget
 volumewidget = widget({type = "textbox"})
-volumewidget.width = 50
+volumewidget.width = 60
 volumewidget.align="left"
 vicious.register(volumewidget, vicious.widgets.volume, "V:$1%", 1, "Master")
 awful.widget.layout.margins[volumewidget] = {top = 1}
@@ -216,6 +227,7 @@ for s = 1, screen.count() do
         timewidget,
         datewidget,
         weatherwidget,
+        batterywidget,
         volumewidget,
         netupwidget,
         netdownwidget,
