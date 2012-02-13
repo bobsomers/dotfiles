@@ -71,109 +71,71 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
--- Create a time widget
-timewidget = widget({type = "textbox"})
-timewidget.width = 60
-timewidget.align = "left"
-vicious.register(timewidget, vicious.widgets.date, " %l:%M %P", 2)
-timeicon = widget({type = "imagebox"})
-timeicon.image = image(beautiful.widget_time)
-
--- Create a date widget
-datewidget = widget({type = "textbox"})
-datewidget.width = 80
-datewidget.align = "left"
-vicious.register(datewidget, vicious.widgets.date, "  %a, %b %e", 2)
-dateicon = widget({type = "imagebox"})
-dateicon.image = image(beautiful.widget_date)
 
 -- Create a textclock widget
 --mytextclock = awful.widget.textclock({ align = "right" })
 
--- Create a network usage widget
-netdownwidget = widget({type = "textbox"})
-netdownwidget.width = 60
-netdownwidget.align = "left"
-vicious.register(netdownwidget, vicious.widgets.net, " ${eth0 down_kb} KB", 1)
-netdownicon = widget({type = "imagebox"})
-netdownicon.image = image(beautiful.widget_netdown)
+-- Create a time widget
+timewidget = widget({type = "textbox"})
+timewidget.align = "left"
+vicious.register(timewidget, vicious.widgets.date, "%l:%M %P", 2)
+awful.widget.layout.margins[timewidget] = {top = 1, right = 10}
 
--- Create a network usage widget
-netupwidget = widget({type = "textbox"})
-netupwidget.width = 60
-netupwidget.align = "left"
-vicious.register(netupwidget, vicious.widgets.net, " ${eth0 up_kb} KB", 1)
-netupicon = widget({type = "imagebox"})
-netupicon.image = image(beautiful.widget_netup)
+-- Create a date widget
+datewidget = widget({type = "textbox"})
+datewidget.align = "left"
+vicious.register(datewidget, vicious.widgets.date, "%a %b %e", 2)
+awful.widget.layout.margins[datewidget] = {top = 1, right = 3}
 
 -- Create a weather widget
 weatherwidget = widget({type = "textbox"})
-weatherwidget.width = 80
 weatherwidget.align = "left"
-vicious.register(weatherwidget, vicious.widgets.weather, " ${tempf} F, ${sky}", 300, "KSBP")
-weathericon = widget({type = "imagebox"})
-weathericon.image = image(beautiful.widget_weather)
+vicious.register(weatherwidget, vicious.widgets.weather, " ${tempf}F, ${sky}", 300, "KSBP")
+awful.widget.layout.margins[weatherwidget] = {top = 1, right = 10}
 
--- Create CPU usage widgets
-cpuwidget1 = widget({type = "textbox"})
-cpuwidget1.width = 60
-cpuwidget1.align = "left"
-vicious.register(cpuwidget1, vicious.widgets.cpu, "  $2%", 1)
-cpuwidget2 = widget({type = "textbox"})
-cpuwidget2.width = 60
-cpuwidget2.align = "left"
-vicious.register(cpuwidget2, vicious.widgets.cpu, "  $3%", 1)
-cpuicon = widget({type = "imagebox"})
-cpuicon.image = image(beautiful.widget_cpu)
+-- Create a volume widget
+volumewidget = widget({type = "textbox"})
+volumewidget.width = 50
+volumewidget.align="left"
+vicious.register(volumewidget, vicious.widgets.volume, "V:$1%", 1, "Master")
+awful.widget.layout.margins[volumewidget] = {top = 1}
+
+-- Create a download usage widget
+netdownwidget = widget({type = "textbox"})
+netdownwidget.width = 70
+netdownwidget.align = "left"
+vicious.register(netdownwidget, vicious.widgets.net, "D:${wlan0 down_kb}K", 1)
+awful.widget.layout.margins[netdownwidget] = {top = 1}
+
+-- Create an upload usage widget
+netupwidget = widget({type = "textbox"})
+netupwidget.width = 70
+netupwidget.align = "left"
+vicious.register(netupwidget, vicious.widgets.net, "U:${wlan0 up_kb}K", 1)
+awful.widget.layout.margins[netupwidget] = {top = 1}
 
 -- Create a memory usage widget
 memwidget = widget({type = "textbox"})
 memwidget.width = 60
 memwidget.align = "left"
-vicious.register(memwidget, vicious.widgets.mem, "  $1%", 1)
-memicon = widget({type = "imagebox"})
-memicon.image = image(beautiful.widget_mem)
+vicious.register(memwidget, vicious.widgets.mem, "M:$1%", 1)
+awful.widget.layout.margins[memwidget] = {top = 1}
 
--- Create a load widget
---loadshortwidget = widget({type = "textbox"})
---loadshortwidget.width = 35
---loadshortwidget.align = "left"
---vicious.register(loadshortwidget, vicious.widgets.uptime, "  $4", 1)
---loadmediumwidget = widget({type = "textbox"})
---loadmediumwidget.width = 30
---loadmediumwidget.align = "left"
---vicious.register(loadmediumwidget, vicious.widgets.uptime, "$5", 1)
---loadlongwidget = widget({type = "textbox"})
---loadlongwidget.width = 40
---loadlongwidget.align = "left"
---vicious.register(loadlongwidget, vicious.widgets.uptime, "$6", 1)
---loadicon = widget({type = "imagebox"})
---loadicon.image = image(beautiful.widget_load)
-
--- Create disk usage widgets
---diskrootwidget = widget({type = "textbox"})
---diskrootwidget.width = 45
---diskrootwidget.align = "left"
---vicious.register(diskrootwidget, vicious.widgets.fs, function(widget, args)
---    local percent = args["{/ used_mb}"] / args["{/ size_mb}"] * 100
---    return string.format(" %d%% /", percent)
---end, 5)
---diskhomewidget = widget({type = "textbox"})
---diskhomewidget.width = 65
---diskhomewidget.align = "left"
---vicious.register(diskhomewidget, vicious.widgets.fs, function(widget, args)
---    local percent = args["{/home used_mb}"] / args["{/home size_mb}"] * 100
---    return string.format(" %d%% /home", percent)
---end, 5)
---diskicon = widget({type = "imagebox"})
---diskicon.image = image(beautiful.widget_disk)
-
--- Create a systray spacer
-systrayspacerwidget = widget({type = "textbox"})
-systrayspacerwidget.width = 10
+-- Create CPU usage widgets
+cpuwidget0 = widget({type = "textbox"})
+cpuwidget0.width = 60
+cpuwidget0.align = "left"
+vicious.register(cpuwidget0, vicious.widgets.cpu, "P0:$2%", 1)
+awful.widget.layout.margins[cpuwidget0] = {top = 1, left = 6}
+cpuwidget1 = widget({type = "textbox"})
+cpuwidget1.width = 60
+cpuwidget1.align = "left"
+vicious.register(cpuwidget1, vicious.widgets.cpu, "P1:$3%", 1)
+awful.widget.layout.margins[cpuwidget1] = {top = 1}
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+awful.widget.layout.margins[mysystray] = {left = 6}
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -250,22 +212,21 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        timewidget, timeicon,
-        s == 1 and datewidget or nil, s == 1 and dateicon or nil,
-        s == 1 and weatherwidget or nil, s == 1 and weathericon or nil,
         --mytextclock,
-        s == 1 and netupwidget or nil, s == 1 and netupicon or nil,
-        s == 1 and netdownwidget or nil, s == 1 and netdownicon or nil,
-        s == 1 and diskhomewidget or nil, s == 1 and diskicon or nil,
-        s == 1 and diskrootwidget or nil, s == 1 and diskicon or nil,
-        s == 1 and loadlongwidget or nil, s == 1 and loadmediumwidget or nil, s == 1 and loadshortwidget or nil, s == 1 and loadicon or nil,
-        s == 1 and memwidget or nil, s == 1 and memicon or nil,
-        s == 1 and cpuwidget2 or nil, s == 1 and cpuicon or nil,
-        s == 1 and cpuwidget1 or nil, s == 1 and cpuicon or nil,
-        systrayspacerwidget, s == 1 and mysystray or nil, systrayspacerwidget,
+        timewidget,
+        datewidget,
+        weatherwidget,
+        volumewidget,
+        netupwidget,
+        netdownwidget,
+        memwidget,
+        cpuwidget1,
+        cpuwidget0,
+        s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
+
 end
 -- }}}
 
@@ -339,9 +300,13 @@ globalkeys = awful.util.table.join(
     -- Volume keys (for Apple aluminum keyboard)
     -- Expects that you're using PulseAudio, and have pulseaudio_ctl from the
     -- AUR installed...
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("mute_toggle") end),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("vol_down") end),
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("vol_up") end)
+    --awful.key({ }, "XF86AudioMute", function () awful.util.spawn("mute_toggle") end),
+    --awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("vol_down") end),
+    --awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("vol_up") end)
+
+    -- Volume keys for Lenovo W500 laptop.
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 2-") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 2+") end)
 )
 
 clientkeys = awful.util.table.join(

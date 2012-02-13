@@ -123,21 +123,10 @@ theme.titlebar_maximized_button_focus_inactive  = "/home/bsomers/.config/awesome
 theme.titlebar_maximized_button_normal_inactive = "/home/bsomers/.config/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
 -- }}}
 
--- {{{ Widgets
-theme.widget_time = "/home/bsomers/.config/awesome/themes/zenburn/icons/time.png"
-theme.widget_date = "/home/bsomers/.config/awesome/themes/zenburn/icons/date.png"
-theme.widget_weather = "/home/bsomers/.config/awesome/themes/zenburn/icons/weather.png"
-theme.widget_netdown = "/home/bsomers/.config/awesome/themes/zenburn/icons/download.png"
-theme.widget_netup = "/home/bsomers/.config/awesome/themes/zenburn/icons/upload.png"
-theme.widget_cpu = "/home/bsomers/.config/awesome/themes/zenburn/icons/cpu.png"
-theme.widget_mem = "/home/bsomers/.config/awesome/themes/zenburn/icons/ram.png"
---theme.widget_disk = "/home/bsomers/.config/awesome/themes/zenburn/icons/drive_disk.png"
---theme.widget_load = "/home/bsomers/.config/awesome/themes/zenburn/icons/chart_bar.png"
--- }}}
 -- }}}
 
 --- {{{ Naughty Notifications Config
-naughty.config.default_preset.font = "Ubuntu 11"
+naughty.config.default_preset.font = "Dina 8"
 --}}}
 
 return theme
