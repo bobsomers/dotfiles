@@ -16,5 +16,9 @@ xset -b
 # If we're running in VirtualBox...
 #VBoxClient-all &
 
+# If we're running wireless...
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#nm-applet --sm-disable &
+
 # Fire off the window manager.
 exec awesome
