@@ -1,5 +1,2 @@
 clear lock
 keysym Caps_Lock = Super_L Caps_Lock
-
-keycode 114 = XF86AudioLowerVolume
-keycode 115 = XF86AudioRaiseVolume
