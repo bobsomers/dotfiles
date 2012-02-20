@@ -18,8 +18,8 @@ alias sug='sudo gvim --remote-silent'
 # Alias for Steam.
 alias steam='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe'
 
-# Settings for ccache and colorgcc.
-export PATH=/usr/lib/colorgcc/bin:$PATH
+# Settings for ccache.
+export PATH=/usr/lib/ccache/bin:$PATH
 export CCACHE_PATH=/usr/bin
 export CCACHE_DIR=/tmp/ccache
 
