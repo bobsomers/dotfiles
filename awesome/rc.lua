@@ -93,7 +93,8 @@ weatherwidget.align = "left"
 vicious.register(weatherwidget, vicious.widgets.weather, "${tempf}F, ${sky}", 300, "KSBP")
 awful.widget.layout.margins[weatherwidget] = {top = 1, right = 10}
 
--- Create a battery widget (only relevant on laptop)
+-- Create a battery widget (laptop only)
+--[[
 batterywidget = widget({type = "textbox"})
 batterywidget.align = "left"
 vicious.register(batterywidget, vicious.widgets.bat, function(widget, args)
@@ -103,6 +104,7 @@ vicious.register(batterywidget, vicious.widgets.bat, function(widget, args)
     return table.concat{"B:", args[2], "%+"}
 end, 3, "BAT0")
 awful.widget.layout.margins[batterywidget] = {top = 1, right = 20}
+--]]
 
 -- Create a volume widget
 volumewidget = widget({type = "textbox"})
@@ -115,14 +117,20 @@ awful.widget.layout.margins[volumewidget] = {top = 1}
 netdownwidget = widget({type = "textbox"})
 netdownwidget.width = 70
 netdownwidget.align = "left"
-vicious.register(netdownwidget, vicious.widgets.net, "D:${wlan0 down_kb}K", 1)
+-- Desktop
+vicious.register(netdownwidget, vicious.widgets.net, "D:${eth0 down_kb}K", 1)
+-- Laptop
+--vicious.register(netdownwidget, vicious.widgets.net, "D:${wlan0 down_kb}K", 1)
 awful.widget.layout.margins[netdownwidget] = {top = 1}
 
 -- Create an upload usage widget
 netupwidget = widget({type = "textbox"})
 netupwidget.width = 70
 netupwidget.align = "left"
-vicious.register(netupwidget, vicious.widgets.net, "U:${wlan0 up_kb}K", 1)
+-- Desktop
+vicious.register(netupwidget, vicious.widgets.net, "U:${eth0 up_kb}K", 1)
+-- Laptop
+--vicious.register(netupwidget, vicious.widgets.net, "U:${wlan0 up_kb}K", 1)
 awful.widget.layout.margins[netupwidget] = {top = 1}
 
 -- Create a memory usage widget
@@ -227,7 +235,7 @@ for s = 1, screen.count() do
         timewidget,
         datewidget,
         weatherwidget,
-        batterywidget,
+        --batterywidget, -- Laptop
         volumewidget,
         netupwidget,
         netdownwidget,
@@ -309,14 +317,8 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
 
-    -- Volume keys (for Apple aluminum keyboard)
-    -- Expects that you're using PulseAudio, and have pulseaudio_ctl from the
-    -- AUR installed...
-    --awful.key({ }, "XF86AudioMute", function () awful.util.spawn("mute_toggle") end),
-    --awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("vol_down") end),
-    --awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("vol_up") end)
-
-    -- Volume keys for Lenovo W500 laptop.
+    -- Volume keys should manipulate ALSA volume.
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 2-") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 2+") end)
 )
