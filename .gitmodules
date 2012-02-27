@@ -28,9 +28,3 @@
 [submodule "vim/vimfiles/bundle/syntastic"]
 	path = vim/vimfiles/bundle/syntastic
 	url = gh:bobsomers/syntastic
-[submodule "vim/vimfiles/bundle/quicktask"]
-	path = vim/vimfiles/bundle/quicktask
-	url = gh:bobsomers/quicktask.git
-[submodule "vim/vimfiles/bundle/ulti-snips"]
-	path = vim/vimfiles/bundle/ulti-snips
-	url = gh:bobsomers/ultisnips.git
