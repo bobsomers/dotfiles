@@ -1,12 +1,10 @@
 # Rewrite a few aliases because Mac is dumb.
-alias ls='ls -l'
+alias ls='ls -lh'
 alias g='mvim --remote-silent'
 alias sug='sudo mvim --remote-silent'
 
 # Mac uses a enviroment variable to color ls output.
 export CLICOLOR=1
 
-# Load autojump
-if [ -f `brew --prefix`/etc/autojump ]; then
-   . `brew --prefix`/etc/autojump
-fi
+# Source Homebrew binaries before system binaries.
+export PATH=/usr/local/bin:$PATH
