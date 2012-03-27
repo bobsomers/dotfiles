@@ -8,3 +8,8 @@ export CLICOLOR=1
 
 # Source Homebrew binaries before system binaries.
 export PATH=/usr/local/bin:$PATH
+
+# Source bash completion from homebrew.
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
