@@ -204,3 +204,16 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['c', 'cpp'] }
+
+" =============================================================================
+"       NEOCOMPLCACHE SETTINGS
+" =============================================================================
+
+" Enable at startup.
+let g:neocomplcache_enable_at_startup=1
+
+" Only display 10 items in the list.
+let g:neocomplcache_max_list=10
+
+" Auto-select the first candidate.
+let g:neocomplcache_enable_auto_select=1
