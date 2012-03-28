@@ -188,14 +188,6 @@ nnoremap <silent> ,t :CommandT<CR>
 nnoremap <silent> ,b :CommandTBuffer<CR>
 
 " =============================================================================
-"       ULTISNIPS SETTINGS
-" =============================================================================
-
-" Move between fields with tab and shift-tab instead of ctrl-j and ctrl-k
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" =============================================================================
 "       SYNTASTIC SETTINGS
 " =============================================================================
 
