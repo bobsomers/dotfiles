@@ -23,8 +23,8 @@ export PATH=/usr/lib/ccache/bin:$PATH
 export CCACHE_PATH=/usr/bin
 export CCACHE_DIR=/tmp/ccache
 
-# Include current working directory and ~/bin in the path.
-export PATH=$PATH:.:~/bin
+# CWD and ~/bin override system paths.
+export PATH=.:~/bin:$PATH
 
 # Shell prompt shenanigans.
 export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h \[\e[1;32m\]\w\n\[\e[1;37m\]⎩ \[\e[1;36m\]\u \[\e[1;37m\]\$ \[\e[0m\]'
