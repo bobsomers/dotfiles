@@ -6,8 +6,12 @@ alias sug='sudo mvim --remote-silent'
 # Mac uses a enviroment variable to color ls output.
 export CLICOLOR=1
 
-# Source Homebrew binaries before system binaries.
-export PATH=/usr/local/bin:$PATH
+# Use mvim as the editor.
+export EDITOR=mvim
+
+# This is a bit silly because CWD and ~/bin will be on the path twice, but we
+# want to search those directories first, then Homebrew, then the system.
+export PATH=.:~/bin:/usr/local/bin:$PATH
 
 # Source bash completion from homebrew.
 if [ -f `brew --prefix`/etc/bash_completion ]; then
