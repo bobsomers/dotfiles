@@ -5,7 +5,7 @@
 	user = bobsomers
 [core]
 	autocrlf = input
-    excludesfile = ~/dotfiles/git/gitignore
+   excludesfile = ~/dotfiles/git/gitignore
 [color]
     ui = true
 [alias]
@@ -13,3 +13,5 @@
 	st = status
 [branch]
     autosetuprebase = always
+[push]
+   default = tracking
