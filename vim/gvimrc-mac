@@ -21,7 +21,7 @@ set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
 " Rsync hook for /Code to synchronize local code files with cominor.
-au BufWritePost * :!~/bin/cominor-sync.py %:p
+au BufWritePost * :!~/bin/cominor-sync %:p
 
 " iFixit indenting style.
 set tabstop=3

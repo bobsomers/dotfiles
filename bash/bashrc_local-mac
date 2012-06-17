@@ -11,7 +11,9 @@ export EDITOR=vim
 
 # This is a bit silly because CWD and ~/bin will be on the path twice, but we
 # want to search those directories first, then Homebrew, then the system.
-export PATH=.:~/bin:/usr/local/bin:/usr/local/share/python:$PATH
+export PATH=.:~/bin:/usr/local/bin:/usr/local/share/python:/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
+
+export NODE_PATH=/usr/local/lib/node_modules
 
 # Source bash completion from homebrew.
 if [ -f `brew --prefix`/etc/bash_completion ]; then
