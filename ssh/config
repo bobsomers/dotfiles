@@ -38,8 +38,8 @@ Host rarity
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
-Host vboxvm
-    HostName 10.11.12.23
+Host derpy
+    HostName 10.11.12.143
     User bsomers
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
