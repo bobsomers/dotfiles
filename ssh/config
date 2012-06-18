@@ -81,7 +81,7 @@ Host lb-dozuki
     ForwardAgent yes
 
 Host app0
-    HostName app0.ifixit.com
+    HostName 50.17.97.248
     User root
     IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
@@ -100,6 +100,18 @@ Host app2
 
 Host app3
     HostName app3.ifixit.com
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
+Host app135
+    HostName 50.16.87.237
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
+Host app137
+    HostName 50.16.79.209
     User root
     IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
