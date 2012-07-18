@@ -15,6 +15,12 @@ Host applejack
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
+Host twilight
+    HostName twilight.bobsomers.com
+    User bsomers
+    IdentityFile ~/keys/bobsomers_rsa
+    ForwardAgent yes
+
 Host rainbowdash
     Hostname 10.11.12.21
     User bsomers
