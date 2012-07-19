@@ -74,6 +74,10 @@ Host cominor
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
+Host hubot
+    HostName cominor.com
+    User hubot
+
 Host lb-ifixit
     HostName ifixit.com
     User root
