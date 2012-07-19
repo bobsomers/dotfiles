@@ -116,6 +116,36 @@ Host app137
     IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
 
+Host app161
+    HostName 107.22.54.56
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
+Host app166
+    HostName 184.73.144.183
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
+Host app167
+    HostName 23.22.90.197
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
+Host app171
+    HostName 50.16.175.238
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
+Host app172
+    HostName 174.129.49.146
+    User root
+    IdentityFile ~/keys/ifixit_rsa
+    ForwardAgent yes
+
 Host db-master
     HostName db.ifixit.com
     User root
