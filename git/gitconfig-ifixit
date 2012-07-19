@@ -3,6 +3,7 @@
 	email = bob@ifixit.com
 [github]
 	user = bobsomers
+	token = 4f974c71b05854434eb03549b8d11175ace7c117
 [core]
 	autocrlf = input
    excludesfile = ~/dotfiles/git/gitignore
