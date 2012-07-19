@@ -7,7 +7,7 @@ require("beautiful")
 -- Notification library
 require("naughty")
 -- Vicious widget library
-require("vicious")
+vicious = require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
