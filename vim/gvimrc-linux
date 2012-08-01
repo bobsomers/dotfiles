@@ -3,7 +3,7 @@ set mousehide
 set guioptions=agimrLt
 if has("gui_running")
     set guifont=Monaco\ 10
-    colorscheme xoria256
+    colorscheme lucius
     if !exists("g:vimrcloaded")
         winpos 50 50
         winsize 100 30
