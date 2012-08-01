@@ -33,7 +33,7 @@ Host pinkiepie
     IdentityFile ~/keys/bobsomers_rsa
 
 Host fluttershy
-    HostName 192.168.1.25
+    HostName fluttershy.bobsomers.com
     User bsomers
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
