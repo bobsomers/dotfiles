@@ -11,6 +11,7 @@ umask 022
 
 # User specific aliases and functions.
 alias ls='ls --color -lh'
+alias ll='ls --color -lh'
 alias free='free -m'
 alias g='gvim --remote-silent'
 alias sug='sudo gvim --remote-silent'
