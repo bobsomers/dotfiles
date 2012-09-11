@@ -1,0 +1,77 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 5
+}
+
+order += "run_watch SSH"
+order += "run_watch NTP"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "load"
+order += "disk /"
+order += "disk /home"
+order += "disk /var"
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "battery 0"
+order += "volume master"
+order += "time"
+
+run_watch SSH {
+    format = " %title: %status "
+    pidfile = "/run/sshd.pid"
+}
+
+run_watch NTP {
+    format = " %title: %status "
+    pidfile = "/run/ntpd.pid"
+}
+
+cpu_usage {
+    format = " CPU: %usage"
+}
+
+cpu_temperature 0 {
+    format = "%degrees°C "
+}
+
+load {
+    format = " LOAD: %1min/%5min/%15min "
+}
+
+disk "/" {
+    format = " ROOT: %avail "
+}
+
+disk "/home" {
+    format = " HOME: %avail "
+}
+
+disk "/var" {
+    format = " VAR: %avail "
+}
+
+wireless wlan0 {
+    format_up = " WLAN: %ip (%essid) "
+    format_down = " WLAN: down "
+}
+
+ethernet eth0 {
+    format_up = " ETH: %ip (%speed) "
+    format_down = " ETH: down "
+}
+
+battery 0 {
+    format = " BATT: %percentage "
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    last_full_capacity = true
+}
+
+volume master {
+    format = " VOL: %volume "
+}
+
+time {
+    format = " %Y-%m-%d %l:%M%P "
+}
