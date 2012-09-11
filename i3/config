@@ -133,17 +133,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Main status bar.
 bar {
         output DVI-I-2
         output LVDS
         status_command i3status
 }
 
+# Auxilliary status bar.
+bar {
+        output DVI-I-3
+        status_command i3status --config ~/.config/i3status/config-aux
+}
+
+# Use 1-pixel borders (no title bars) for all windows.
+new_window 1pixel
+
 # Customizations for specific apps (use xprop to find WM_CLASS).
-for_window [class="Chromium"] border 1pixel
-for_window [class="Terminator"] border 1pixel
+#for_window [class="Chromium"] border 1pixel
+#for_window [class="Terminator"] border 1pixel
 
 # Key bindings for volume keys.
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up.sh 3
