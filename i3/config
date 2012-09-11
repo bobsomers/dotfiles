@@ -143,3 +143,11 @@ bar {
 # Customizations for specific apps (use xprop to find WM_CLASS).
 for_window [class="Chromium"] border 1pixel
 for_window [class="Terminator"] border 1pixel
+
+# Key bindings for volume keys.
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up.sh 3
+bindsym XF86AudioLowerVolume exec --no-startup-id volume-down.sh 3
+bindsym XF86AudioMute exec --no-startup-id volume-mute.sh
+
+# Launch volnoti at startup.
+exec --no-startup-id volnoti --timeout 2
