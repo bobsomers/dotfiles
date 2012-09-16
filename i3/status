@@ -19,17 +19,17 @@ order += "volume master"
 order += "time"
 
 run_watch SSH {
-    format = " %title: %status "
+    format = " %title %status "
     pidfile = "/run/sshd.pid"
 }
 
 run_watch NTP {
-    format = " %title: %status "
+    format = " %title %status "
     pidfile = "/run/ntpd.pid"
 }
 
 cpu_usage {
-    format = " CPU: %usage"
+    format = " CPU %usage"
 }
 
 cpu_temperature 0 {
@@ -37,39 +37,39 @@ cpu_temperature 0 {
 }
 
 load {
-    format = " LOAD: %1min/%5min/%15min "
+    format = " LOAD %1min/%5min/%15min "
 }
 
 disk "/" {
-    format = " ROOT: %avail "
+    format = " ROOT %avail "
 }
 
 disk "/home" {
-    format = " HOME: %avail "
+    format = " HOME %avail "
 }
 
 disk "/var" {
-    format = " VAR: %avail "
+    format = " VAR %avail "
 }
 
 wireless wlan0 {
-    format_up = " WLAN: %ip (%essid) "
-    format_down = " WLAN: down "
+    format_up = " WLAN %ip (%essid) "
+    format_down = " WLAN down "
 }
 
 ethernet eth0 {
-    format_up = " ETH: %ip (%speed) "
-    format_down = " ETH: down "
+    format_up = " ETH %ip (%speed) "
+    format_down = " ETH down "
 }
 
 battery 0 {
-    format = " BATT: %percentage "
+    format = " BATT %percentage "
     path = "/sys/class/power_supply/BAT%d/uevent"
     last_full_capacity = true
 }
 
 volume master {
-    format = " VOL: %volume "
+    format = " VOL %volume "
 }
 
 time {
