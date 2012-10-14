@@ -31,6 +31,3 @@
 [submodule "vim/vimfiles/bundle/neocomplcache"]
 	path = vim/vimfiles/bundle/neocomplcache
 	url = gh:bobsomers/neocomplcache.git
-[submodule "vim/vimfiles/bundle/lucius"]
-	path = vim/vimfiles/bundle/lucius
-	url = gh:bobsomers/Lucius.git
