@@ -25,3 +25,12 @@
 [submodule "vim/vimfiles/bundle/neocomplcache"]
 	path = vim/vimfiles/bundle/neocomplcache
 	url = gh:bobsomers/neocomplcache.git
+[submodule "vim/vimfiles/bundle/nerdcommenter"]
+	path = vim/vimfiles/bundle/nerdcommenter
+	url = gh:bobsomers/nerdcommenter.git
+[submodule "vim/vimfiles/bundle/ctrlp"]
+	path = vim/vimfiles/bundle/ctrlp
+	url = gh:bobsomers/ctrlp.vim.git
+[submodule "vim/vimfiles/bundle/tagbar"]
+	path = vim/vimfiles/bundle/tagbar
+	url = gh:bobsomers/tagbar.git
