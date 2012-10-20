@@ -2,4 +2,4 @@
 eval `keychain --eval --agents ssh ~/keys/bobsomers_rsa`
 
 # Lock screen for GUI setups.
-alias lock="i3lock -i ~/dotfiles/images/arch_1680x1050.png -t"
+alias lock="i3lock -i ~/dotfiles/images/arch_1920x1080.png -t"
