@@ -15,6 +15,11 @@ alias ll='ls --color -lh'
 alias free='free -m'
 alias g='gvim --remote-silent'
 alias sug='sudo gvim --remote-silent'
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../..'
+alias uuuu='cd ../../../..'
+alias uuuuu='cd ../../../../..'
 
 # Alias for Steam.
 alias steam='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe'
