@@ -6,5 +6,5 @@ if trigger == 'songstart'
    songinfo = {}
 
    STDIN.each_line {|line| songinfo.store(*line.chomp.split('=', 2))}
-   `notify-send "Now Playing" "#{songinfo['title']}\nby #{songinfo['artist']}"`
+   `notify-send -i /usr/share/icons/Faenza/emblems/16/emblem-sound.png "#{songinfo['artist']}" "#{songinfo['title']}"`
 end

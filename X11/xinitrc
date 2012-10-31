@@ -23,5 +23,8 @@ xset -b
 # Set the background.
 sh ~/.fehbg &
 
+# Start the notification daemon.
+twmnd &
+
 # Fire off the window manager.
 exec i3
