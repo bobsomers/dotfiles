@@ -21,6 +21,12 @@ Host twilight
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
 
+Host adama
+    HostName adama.bobsomers.com
+    User bsomers
+    IdentityFile ~/keys/bobsomers_rsa
+    ForwardAgent yes
+
 Host rainbowdash
     Hostname 10.11.12.21
     User bsomers
