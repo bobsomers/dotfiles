@@ -18,6 +18,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'airblade/vim-gitgutter'
 
 " =============================================================================
 "       VIM SETTINGS
@@ -197,35 +199,8 @@ let g:ctrlp_cmd='CtrlPMixed'
 let g:ctrlp_cache_dir='/tmp/ctrlp-cache'
 
 " =============================================================================
-"       SYNTASTIC SETTINGS
+"       GITGUTTER TWEAKS
 " =============================================================================
 
-" Syntastic is not good enough at C/C++ yet... specifically because of its
-" abysmal handling of include paths.
-" let g:syntastic_mode_map = { 'mode': 'active',
-"                            \ 'active_filetypes': [],
-"                            \ 'passive_filetypes': ['c', 'cpp'] }
-
-" =============================================================================
-"       NEOCOMPLCACHE SETTINGS
-" =============================================================================
-
-" Enable at startup.
-" let g:neocomplcache_enable_at_startup=1
-
-" Only display 10 items in the list.
-" let g:neocomplcache_max_list=10
-
-" Auto-select the first candidate.
-" let g:neocomplcache_enable_auto_select=1
-
-" =============================================================================
-"       TAGBAR SETTINGS
-" =============================================================================
-
-" Open/close Tagbar with F3.
-" nmap <F3> :TagbarToggle<CR>
-" nmap <S-F3> :TagbarClose<CR>
-
-" Use smaller icon characters.
-" let g:tagbar_iconchars = ['▾', '▸']
+" Toggle line highlights with F4.
+nmap <F4> :ToggleGitGutterLineHighlights<CR>

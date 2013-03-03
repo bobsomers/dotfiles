@@ -30,4 +30,11 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_enable_on_vim_startup=1
 
 " Toggle display of indent guides with F4.
-nmap <F4> :IndentGuidesToggle<CR>
+nmap <F3> :IndentGuidesToggle<CR>
+
+" =============================================================================
+"       GITGUTTER TWEAKS
+" =============================================================================
+
+" Fix the gutter color.
+highlight clear SignColumn
