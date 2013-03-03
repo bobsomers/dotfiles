@@ -1,0 +1,94 @@
+background yes
+update_interval 1
+out_to_console no
+out_to_stderr no
+
+own_window yes
+own_window_class Conky
+own_window_transparent yes
+own_window_type override
+
+cpu_avg_samples 2
+net_avg_samples 2
+no_buffers yes
+temperature_unit celsius
+
+alignment top_right
+gap_x 1600
+gap_y 20
+use_xft yes
+xftfont Ubuntu:size=12:bold
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+border_width 1
+stippled_borders 0
+extra_newline no
+uppercase no
+use_spacer none
+minimum_size 300 10
+show_graph_scale no
+show_graph_range no
+double_buffer yes
+
+lua_load ~/dotfiles/conky/rings.lua
+lua_draw_hook_post rings
+
+TEXT
+# Date and day of the week.
+${color 4c7899}${font Ubuntu:size=72:bold}
+${voffset -110}${time %e}
+${color ffffff}${font Ubuntu:size=28:bold}
+${offset 110}${voffset -164}${time %A}
+${color 4c7899}${font Ubuntu:size=28:bold}
+${offset 110}${voffset -36}${time %B}
+
+# Digital clock.
+${color 666666}${font Ubuntu:size=48:bold}
+${offset 75}${voffset -20}${time %l}
+${color 666666}${font Ubuntu:size=48:bold}
+${offset 152}${voffset -122}${time %M}
+
+# CPU usage graph.
+${color}${font}
+${offset 2}${voffset 74}${cpugraph cpu0 16,290}
+
+# CPU frequencies.
+${font}
+${offset 220}${voffset -145}${color}${freq 1} ${color 4c7899}MHz
+${offset 220}${voffset 0}${color}${freq 3} ${color 4c7899}MHz
+${offset 220}${voffset 0}${color}${freq 5} ${color 4c7899}MHz
+${offset 220}${voffset 0}${color}${freq 7} ${color 4c7899}MHz
+${offset 220}${voffset 0}${color}${freq 9} ${color 4c7899}MHz
+${offset 220}${voffset 0}${color}${freq 11} ${color 4c7899}MHz
+
+# CPU temperature.
+${color 4c7899}${font Ubuntu:size=16:bold}
+${offset 84}${voffset -52}${execi 8 sensors | grep 'Physical id 0' | cut -d ' ' -f 5 | cut -d '.' -f 1 | grep -E -o '[0-9]+'} °C
+
+#${color}${font}
+#${voffset 200}
+#${scroll 16 $nodename - $sysname $kernel on $machine | }
+#$hr
+#${color grey}Uptime:$color $uptime
+#${color grey}Frequency (in MHz):$color $freq
+#${color grey}Frequency (in GHz):$color $freq_g
+#${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+#${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+#${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+#${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+#$hr
+#${color grey}File systems:
+# / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+#${color grey}Networking:
+#Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+#$hr
+#${color grey}Name              PID   CPU%   MEM%
+#${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+#${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+#${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+#${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
