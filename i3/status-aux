@@ -7,5 +7,5 @@ general {
 order += "time"
 
 time {
-    format = " %Y-%m-%d %l:%M%P "
+    format = "%Y-%m-%d %l:%M%P  "
 }

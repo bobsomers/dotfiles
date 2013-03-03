@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Ubuntu Bold 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -24,7 +24,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn "Ubuntu Bold 11" -p "➤" -nb "#000" -sb "#285577" -sf "#FFF"
 
 # change focus
 bindsym $mod+j focus left
@@ -135,23 +135,24 @@ bindsym $mod+r mode "resize"
 
 # Main status bar.
 bar {
-        output DVI-I-2
+        output DVI-I-1
         output LVDS
         status_command i3status
 }
 
 # Auxilliary status bar.
 bar {
-        output DVI-I-3
+        output DVI-D-0
         status_command i3status --config ~/.config/i3status/config-aux
 }
 
 # Use 1-pixel borders (no title bars) for all windows.
 new_window 1pixel
+new_float 1pixel
 
-# Customizations for specific apps (use xprop to find WM_CLASS).
-#for_window [class="Chromium"] border 1pixel
-#for_window [class="Terminator"] border 1pixel
+# Force windows to float for apps that don't set floating hints.
+for_window [class="Steam"] floating enable
+for_window [class="CrashPlan"] floating enable
 
 # Key bindings for volume keys.
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up.sh 3
@@ -159,4 +160,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id volume-down.sh 3
 bindsym XF86AudioMute exec --no-startup-id volume-mute.sh
 
 # Launch volnoti at startup.
-exec --no-startup-id volnoti --timeout 2
+exec --no-startup-id volnoti --timeout 1
+
+# Launch conky at startup.
+# exec --no-startup-id conky
