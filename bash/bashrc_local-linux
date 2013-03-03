@@ -1,5 +1,15 @@
 # Use keychain to keep ssh keys loaded.
 eval `keychain --eval --agents ssh ~/keys/bobsomers_rsa`
 
+# Keep Chromium's browser cache in RAM tmpfs.
+export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp/chromium-cache"
+
+# Set the audio driver for Steam.
+alias steam="SDL_AUDIODRIVER=alsa steam"
+
 # Lock screen for GUI setups.
-alias lock="i3lock -i ~/dotfiles/images/arch_1920x1080.png -t"
+alias lock="i3lock -i ~/dotfiles/images/arch_bw_1920x1080.png -t -d"
+
+# Mount and unmount my Android phone.
+alias android_mount="mtpfs -o allow_other /mnt/phone"
+alias android_umount="fusermount -u /mnt/phone"

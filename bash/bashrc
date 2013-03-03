@@ -21,15 +21,13 @@ alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
 alias uuuuu='cd ../../../../..'
 
-# Alias for Steam.
-alias steam='WINEDEBUG=-all wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe'
-
-# Settings for ccache.
+# Settings for ccache (acclerate compilers in /usr/bin, store cache on tmpfs
+# RAM disk).
 export PATH=/usr/lib/ccache/bin:$PATH
 export CCACHE_PATH=/usr/bin
 export CCACHE_DIR=/tmp/ccache
 
-# CWD and ~/bin override system paths.
+# CWD and ~/bin override system paths. Is this bad? Yes. Do I care? No.
 export PATH=.:~/bin:$PATH
 
 # Shell prompt shenanigans.
