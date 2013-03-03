@@ -1,23 +1,30 @@
 " =============================================================================
-"       PATHOGEN SETTINGS
+"       VUNDLE SETTINGS
 " =============================================================================
 
-" Load pathogen from its own bundle (for easy updating).
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+" Configure Vundle.
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle bundles.
+Bundle 'gmarik/vundle'
+Bundle 'xoria256.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-fugitive'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 
 " =============================================================================
 "       VIM SETTINGS
 " =============================================================================
 
-" Compatibility settings.
-set nocompatible
-
 " Filetype detection, plugins, and indenting.
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Line numbers.
 set number
@@ -46,7 +53,7 @@ set path=.,/usr/include/**,/usr/local/include/**
 set shellslash
 
 " Use the visual bell instead of beeping like crazy.
-"set visualbell
+" set visualbell
 
 " Allow backspacing over indents, end-of-line, and the start of insert.
 set backspace=indent,eol,start
@@ -186,36 +193,39 @@ let g:EasyMotion_leader_key=',m'
 " Run in mixed mode by default.
 let g:ctrlp_cmd='CtrlPMixed'
 
+" Put the cache directory in a tmps RAM disk.
+let g:ctrlp_cache_dir='/tmp/ctrlp-cache'
+
 " =============================================================================
 "       SYNTASTIC SETTINGS
 " =============================================================================
 
 " Syntastic is not good enough at C/C++ yet... specifically because of its
 " abysmal handling of include paths.
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['c', 'cpp'] }
+" let g:syntastic_mode_map = { 'mode': 'active',
+"                            \ 'active_filetypes': [],
+"                            \ 'passive_filetypes': ['c', 'cpp'] }
 
 " =============================================================================
 "       NEOCOMPLCACHE SETTINGS
 " =============================================================================
 
 " Enable at startup.
-let g:neocomplcache_enable_at_startup=1
+" let g:neocomplcache_enable_at_startup=1
 
 " Only display 10 items in the list.
-let g:neocomplcache_max_list=10
+" let g:neocomplcache_max_list=10
 
 " Auto-select the first candidate.
-let g:neocomplcache_enable_auto_select=1
+" let g:neocomplcache_enable_auto_select=1
 
 " =============================================================================
 "       TAGBAR SETTINGS
 " =============================================================================
 
 " Open/close Tagbar with F3.
-nmap <F3> :TagbarToggle<CR>
-nmap <S-F3> :TagbarClose<CR>
+" nmap <F3> :TagbarToggle<CR>
+" nmap <S-F3> :TagbarClose<CR>
 
 " Use smaller icon characters.
-let g:tagbar_iconchars = ['▾', '▸']
+" let g:tagbar_iconchars = ['▾', '▸']
