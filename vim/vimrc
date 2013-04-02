@@ -43,6 +43,12 @@ syntax on
 set background=dark
 set synmaxcol=2048
 
+" Color scheme and 256 color terminal support (disable background color erase).
+colorscheme xoria256
+if &term =~ '256color'
+    set t_ut=
+endif
+
 " Search/find options.
 set wrapscan
 set ignorecase
