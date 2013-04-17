@@ -20,6 +20,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'Yggdroot/indentLine'
+Bundle 'uarun/vim-protobuf'
 
 " =============================================================================
 "       VIM SETTINGS
@@ -210,3 +212,13 @@ let g:ctrlp_cache_dir='/tmp/ctrlp-cache'
 
 " Toggle line highlights with F4.
 nmap <F4> :ToggleGitGutterLineHighlights<CR>
+
+" =============================================================================
+"       INDENTLINE SETTINGS
+" =============================================================================
+
+" Use soft gray color.
+let g:indentLine_color_term = 238
+
+" Make them a solid bar.
+let g:indentLine_char = '│'
