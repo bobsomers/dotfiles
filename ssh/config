@@ -8,19 +8,6 @@ Host bb
     User git
     IdentityFile ~/keys/bobsomers_rsa
 
-Host applejack
-    HostName applejack.5tubborn.com
-    User bsomers
-    Port 30012
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host twilight
-    HostName twilight.bobsomers.com
-    User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
 Host adama
     HostName adama.bobsomers.com
     User bsomers
@@ -28,148 +15,13 @@ Host adama
     ForwardAgent yes
 
 Host rainbowdash
-    Hostname 10.11.12.21
+    Hostname 172.25.25.21
     User bsomers
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
-
-Host pinkiepie
-    Hostname 10.11.12.27
-    User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
 
 Host fluttershy
     HostName fluttershy.bobsomers.com
     User bsomers
     IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host rarity
-    HostName 10.11.12.25
-    User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host derpy
-    HostName 10.11.12.143
-    User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host vogon
-    HostName vogon.csc.calpoly.edu
-    User rsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host multicore
-    HostName multicore.csc.calpoly.edu
-    User rsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host tesla
-    HostName tesla.csc.calpoly.edu
-    User rsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host cominor
-    HostName cominor.com
-    User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
-    ForwardAgent yes
-
-Host hubot
-    HostName cominor.com
-    User hubot
-
-Host lb-ifixit
-    HostName ifixit.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host lb-dozuki
-    HostName dozuki.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app0
-    HostName 50.17.97.248
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app1
-    HostName app1.ifixit.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app2
-    HostName app2.ifixit.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app3
-    HostName app3.ifixit.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app135
-    HostName 50.16.87.237
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app137
-    HostName 50.16.79.209
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app161
-    HostName 107.22.54.56
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app166
-    HostName 184.73.144.183
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app167
-    HostName 23.22.90.197
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app171
-    HostName 50.16.175.238
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host app172
-    HostName 174.129.49.146
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host db-master
-    HostName db.ifixit.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
-    ForwardAgent yes
-
-Host db-slave
-    HostName slave.ifixit.com
-    User root
-    IdentityFile ~/keys/ifixit_rsa
     ForwardAgent yes
