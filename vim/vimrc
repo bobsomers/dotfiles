@@ -222,3 +222,10 @@ let g:indentLine_color_term = 238
 
 " Make them a solid bar.
 let g:indentLine_char = '│'
+
+" =============================================================================
+"       RUST SYNTAX SETTINGS
+" =============================================================================
+
+" Don't conceal arrows with fancy UTF-8 versions.
+let g:no_rust_conceal = 1
