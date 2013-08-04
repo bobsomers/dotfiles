@@ -29,8 +29,18 @@ Bundle 'uarun/vim-protobuf'
 " Filetype detection, plugins, and indenting.
 filetype plugin indent on
 
-" Line numbers.
-set number
+" Relative line numbers in normal mode, absolute line numbers in insert mode.
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+noremap <C-n> :call NumberToggle()<CR>
 
 " Tabbing options.
 set tabstop=4
@@ -49,6 +59,13 @@ colorscheme xoria256
 if &term =~ '256color'
     set t_ut=
 endif
+
+" Highlight current line, but only in the active window.
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
 
 " Search/find options.
 set wrapscan
