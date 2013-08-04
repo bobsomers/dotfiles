@@ -23,6 +23,8 @@ Host rainbowdash
 Host derpy
     HostName 172.25.25.15
     User bsomers
+    IdentityFile ~/keys/bobsomers_rsa
+    ForwardAgent yes
 
 Host fluttershy
     HostName fluttershy.bobsomers.com
