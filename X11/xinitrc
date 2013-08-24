@@ -16,6 +16,11 @@ xset -b
 # Go easy on the mouse acceleration.
 xset m 4/3 10
 
+# Remap caps lock to control, and use xcape to map control to escape if pressed
+# and released on its own.
+setxkbmap -option ctrl:nocaps
+xcape -e "Control_L=Escape"
+
 # If we're running in VirtualBox...
 #VBoxClient-all &
 
