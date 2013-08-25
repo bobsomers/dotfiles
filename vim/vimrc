@@ -195,7 +195,7 @@ nmap <silent> ,ul :t.\|s/./=/g\|set nohls<CR>
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<CR>
 
 " Map jj to escape in insert mode.
-imap jj <ESC>
+" imap jj <ESC>
 
 " =============================================================================
 "       NERD TREE SETTINGS 
