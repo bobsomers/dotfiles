@@ -21,6 +21,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'uarun/vim-protobuf'
+Bundle 'wting/rust.vim'
 
 " =============================================================================
 "       VIM SETTINGS
@@ -29,18 +30,9 @@ Bundle 'uarun/vim-protobuf'
 " Filetype detection, plugins, and indenting.
 filetype plugin indent on
 
-" Relative line numbers in normal mode, absolute line numbers in insert mode.
+" Hybrid line numbers.
 set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-noremap <C-n> :call NumberToggle()<CR>
+set number
 
 " Tabbing options.
 set tabstop=4
