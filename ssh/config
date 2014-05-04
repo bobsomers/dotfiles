@@ -1,12 +1,12 @@
 Host gh
     HostName github.com
     User git
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
 
 Host bb
     HostName bitbucket.org
     User git
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
 
 Host adama
     HostName adama.bobsomers.com
@@ -34,6 +34,11 @@ Host applejack
 
 Host derpy
     HostName 172.25.25.15
+    User bsomers
+    IdentityFile ~/keys/bobsomers_rsa
+    ForwardAgent yes
+
+Host graygear
     User bsomers
     IdentityFile ~/keys/bobsomers_rsa
     ForwardAgent yes
