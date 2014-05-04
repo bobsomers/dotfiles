@@ -23,7 +23,7 @@ Host fluttershy
 Host rainbowdash
     Hostname 172.25.25.21
     User bsomers
-    IdentityFile ~/.ssh/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host applejack
