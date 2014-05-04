@@ -11,34 +11,34 @@ Host bb
 Host adama
     HostName adama.bobsomers.com
     User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host fluttershy
     HostName fluttershy.bobsomers.com
     User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host rainbowdash
     Hostname 172.25.25.21
     User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bobsomers_rsa
     ForwardAgent yes
 
 Host applejack
     HostName 172.25.25.3
     User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host derpy
     HostName 172.25.25.15
     User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host graygear
     User bsomers
-    IdentityFile ~/keys/bobsomers_rsa
+    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
