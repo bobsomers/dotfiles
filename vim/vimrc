@@ -18,10 +18,11 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'uarun/vim-protobuf'
 Bundle 'wting/rust.vim'
+Bundle 'tikhomirov/vim-glsl'
 
 " =============================================================================
 "       VIM SETTINGS
