@@ -154,6 +154,7 @@ new_float 1pixel
 for_window [class="Steam"] floating enable
 for_window [class="CrashPlan"] floating enable
 for_window [class="love"] floating enable
+for_window [class="Thermite"] floating enable
 
 # Key bindings for volume keys.
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume-up.sh 3
