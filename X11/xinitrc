@@ -10,6 +10,9 @@ fi
 # Remap keys.
 xmodmap ~/.Xmodmap
 
+# Configure the cursor.
+xrdb ~/.Xresources &
+
 # Disable that blasted speaker beeping.
 xset -b
 
