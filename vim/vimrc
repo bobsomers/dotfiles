@@ -23,6 +23,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'uarun/vim-protobuf'
 Plugin 'wting/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
+Bundle 'cespare/vim-toml'
 
 call vundle#end()
 
