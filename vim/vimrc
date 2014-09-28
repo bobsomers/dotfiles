@@ -5,6 +5,11 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'xoria256.vim'
+
+Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
+
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
@@ -12,8 +17,6 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe', {'for': 'cpp'}
 Plug 'Yggdroot/indentLine'
-Plug 'wting/rust.vim', {'for': 'rust'}
-Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
