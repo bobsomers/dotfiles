@@ -5,24 +5,27 @@
 " Configure Vundle.
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Vundle bundles.
-Bundle 'gmarik/vundle'
-Bundle 'xoria256.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
-"Bundle 'airblade/vim-gitgutter'
-Bundle 'Yggdroot/indentLine'
-Bundle 'uarun/vim-protobuf'
-Bundle 'wting/rust.vim'
-Bundle 'tikhomirov/vim-glsl'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'xoria256.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'airblade/vim-gitgutter'
+Plugin 'Yggdroot/indentLine'
+Plugin 'uarun/vim-protobuf'
+Plugin 'wting/rust.vim'
+Plugin 'tikhomirov/vim-glsl'
+Bundle 'cespare/vim-toml'
+
+call vundle#end()
 
 " =============================================================================
 "       VIM SETTINGS

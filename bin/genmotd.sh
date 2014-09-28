@@ -2,7 +2,7 @@
 
 echo ""
 figlet -c -f term "Welcome to..."
-uname -n | figlet -c -f smslant
+hostname -s | figlet -c -f lean
 echo ""
 fortune -s | figlet -c -f term
 echo ""

@@ -8,6 +8,11 @@ Host bb
     User git
     IdentityFile ~/.ssh/bsomers_rsa
 
+Host dwa
+    HostName 192.168.160.216
+    User git
+    IdentityFile ~/.ssh/bsomers_rsa
+
 Host adama
     HostName adama.bobsomers.com
     User bsomers
@@ -39,6 +44,17 @@ Host derpy
     ForwardAgent yes
 
 Host graygear
+    User bsomers
+    IdentityFile ~/.ssh/bsomers_rsa
+    ForwardAgent yes
+
+Host lish
+    HostName lish-fremont.linode.com
+    User magicbobert
+    IdentityFile ~/.ssh/bsomers_rsa
+
+Host baltar
+    Hostname baltar.bobsomers.com
     User bsomers
     IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
