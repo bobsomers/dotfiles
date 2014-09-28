@@ -1,35 +1,28 @@
 " =============================================================================
-"       VUNDLE SETTINGS
+"       VIM-PLUG SETTINGS
 " =============================================================================
 
-" Configure Vundle.
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Vundle bundles.
-Plugin 'gmarik/Vundle.vim'
-Plugin 'xoria256.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-"Plugin 'airblade/vim-gitgutter'
-Plugin 'Yggdroot/indentLine'
-Plugin 'uarun/vim-protobuf'
-Plugin 'wting/rust.vim'
-Plugin 'tikhomirov/vim-glsl'
-Bundle 'cespare/vim-toml'
+Plug 'xoria256.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', {'for': 'cpp'}
+Plug 'Yggdroot/indentLine'
+Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
 
-call vundle#end()
+call plug#end()
 
 " =============================================================================
 "       VIM SETTINGS
 " =============================================================================
+
+" Nobody cares about vi compatibility.
+set nocompatible
 
 " Filetype detection, plugins, and indenting.
 filetype plugin indent on
