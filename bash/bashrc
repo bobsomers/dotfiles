@@ -27,6 +27,10 @@ export PATH=/usr/lib/ccache/bin:$PATH
 export CCACHE_PATH=/usr/bin
 export CCACHE_DIR=/tmp/ccache
 
+# Include node executables in the path. (Stop freaking using software
+# dependency managers to ship software! Use a fraking package manager!)
+export PATH=/home/bsomers/node_modules/.bin:$PATH
+
 # CWD and ~/bin override system paths. Is this bad? Yes. Do I care? No.
 export PATH=.:~/bin:$PATH
 
