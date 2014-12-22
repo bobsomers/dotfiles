@@ -26,6 +26,12 @@ Host applejack
     IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
+Host udoo
+    HostName 172.25.25.30
+    User bsomers
+    IdentityFile ~/.ssh/bsomers_rsa
+    ForwardAgent yes
+
 Host derpy
     HostName 172.25.25.15
     User bsomers
