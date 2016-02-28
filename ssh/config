@@ -1,12 +1,10 @@
 Host gh
     HostName github.com
     User git
-    IdentityFile ~/.ssh/bsomers_rsa
 
 Host bb
     HostName bitbucket.org
     User git
-    IdentityFile ~/.ssh/bsomers_rsa
 
 Host fluttershy
     HostName 172.25.25.2
