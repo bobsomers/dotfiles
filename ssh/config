@@ -9,7 +9,7 @@ Host bb
     IdentityFile ~/.ssh/bsomers_rsa
 
 Host fluttershy
-    HostName fluttershy.bobsomers.com
+    HostName 172.25.25.2
     User bsomers
     IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
@@ -20,7 +20,7 @@ Host rainbowdash
     IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
-Host applejack
+Host starbuck
     HostName 172.25.25.3
     User bsomers
     IdentityFile ~/.ssh/bsomers_rsa
@@ -28,12 +28,6 @@ Host applejack
 
 Host udoo
     HostName 172.25.25.30
-    User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
-    ForwardAgent yes
-
-Host derpy
-    HostName 172.25.25.15
     User bsomers
     IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
@@ -48,14 +42,3 @@ Host lish
     HostName lish-fremont.linode.com
     User magicbobert
     IdentityFile ~/.ssh/bsomers_rsa
-
-Host dwa
-    HostName 192.168.160.216
-    User git
-    IdentityFile ~/.ssh/bsomers_rsa
-
-Host graygear
-    User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
-    ForwardAgent yes
-
