@@ -9,10 +9,7 @@ export CLICOLOR=1
 export EDITOR=vim
 
 # Search the local and ~/bin directories first, then Homebrew, then the system.
-export PATH=.:~/bin:/usr/local/bin:~/Library/Python/2.7/bin:/usr/local/opt/ruby/bin:/usr/local/share/npm/bin:$PATH
-
-# Tell GTK where to find the engines.
-export GTK_PATH=/usr/local/lib/gtk-2.0
+export PATH=.:~/bin:/usr/local/bin:$PATH
 
 # Source bash completion from homebrew.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
