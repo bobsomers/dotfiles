@@ -4,22 +4,22 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'xoria256.vim'
+Plug 'chriskempson/base16-vim'
 
-Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 
-Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', {'for': 'cpp'}
 Plug 'Yggdroot/indentLine'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'scrooloose/syntastic'
+"Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -38,9 +38,9 @@ set relativenumber
 set number
 
 " Tabbing options.
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 
@@ -50,7 +50,8 @@ set background=dark
 set synmaxcol=2048
 
 " Color scheme.
-colorscheme xoria256
+let base16colorspace=256
+colorscheme base16-default
 
 " Highlight current line, but only in the active window.
 augroup CursorLine
@@ -70,9 +71,6 @@ set path=.,/usr/include/**,/usr/local/include/**
 " Use forward slashes in paths regardless of the OS.
 set shellslash
 
-" Use the visual bell instead of beeping like crazy.
-" set visualbell
-
 " Allow backspacing over indents, end-of-line, and the start of insert.
 set backspace=indent,eol,start
 
@@ -85,9 +83,8 @@ set hidden
 " Use a $ to mark the end of a word when changing it.
 set cpoptions=cesB$
 
-" Status line options (lightline handles this now).
+" Status line options (let airline handle it).
 set laststatus=2
-"set statusline=\ %{fugitive#statusline()}\ %f\ %m\ %r%=%l/%L\ <%c>\ [%p%%]\ 
 
 " Lazy redraw for efficiency.
 set lazyredraw
@@ -122,7 +119,7 @@ set fillchars=""
 set nofoldenable
 
 " =============================================================================
-"       KEY MAPPINGS 
+"       KEY MAPPINGS
 " =============================================================================
 " Thanks to Derek Wyatt for a bunch of these!
 
@@ -132,7 +129,7 @@ nmap <silent> ,p :set invpaste<CR>:set paste?<CR>
 " Turn off highlight search.
 nmap <silent> ,n :set invhls<CR>:set hls?<CR>
 
-" Toggle text wrapping. 
+" Toggle text wrapping.
 nmap <silent> ,w :set invwrap<CR>:set wrap?<CR>
 
 " Maps to make handling windows a bit easier.
@@ -184,7 +181,7 @@ nmap <silent> ,ul :t.\|s/./=/g\|set nohls<CR>
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<CR>
 
 " =============================================================================
-"       NERD TREE SETTINGS 
+"       NERD TREE SETTINGS
 " =============================================================================
 
 " Open/close NERD Tree with F2.
@@ -199,16 +196,6 @@ nmap <S-F2> :NERDTreeClose<CR>
 let g:EasyMotion_leader_key=',m'
 
 " =============================================================================
-"       CTRLP SETTINGS
-" =============================================================================
-
-" Run in mixed mode by default.
-let g:ctrlp_cmd='CtrlPMixed'
-
-" Put the cache directory in a tmps RAM disk.
-let g:ctrlp_cache_dir='/tmp/ctrlp-cache'
-
-" =============================================================================
 "       INDENTLINE SETTINGS
 " =============================================================================
 
@@ -217,3 +204,48 @@ let g:indentLine_color_term = 238
 
 " Make them a solid bar.
 let g:indentLine_char = '│'
+
+" =============================================================================
+"       AIRLINE SETTINGS
+" =============================================================================
+
+" Display buffers in the tab line.
+let g:airline#extensions#tabline#enabled = 1
+
+" Use Powerline patched fonts.
+let g:airline_powerline_fonts = 1
+
+" Use base16_default theme (tomorow has broken highlights).
+let g:airline_theme='base16_default'
+
+" =============================================================================
+"       CTRL-SPACE SETTINGS
+" =============================================================================
+
+" Use the silver searcher for searching files.
+if executable("ag")
+  let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
+
+" Handle workspaces nicely.
+let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
+let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
+let g:CtrlSpaceSaveWorkspaceOnExit = 1
+
+" Ctrl-P shortcut for fuzzy file search.
+nnoremap <silent><C-p> :CtrlSpace O<CR>
+
+" =============================================================================
+"       FILETYPE SETTINGS
+" =============================================================================
+
+" ROS .launch files are XML
+au BufNewFile,BufRead *.launch set filetype=xml
+
+" ROS .rosinstall files are YAML
+au BufNewFile,BufRead *.rosinstall set filetype=yaml
+
+" Bazel WORKSPACE, BUILD, and .bzl files are Python
+au BufNewFile,BufRead WORKSPACE set filetype=python
+au BufNewFile,BufRead BUILD* set filetype=python
+au BufNewFile,BufRead *.bzl set filetype=python
