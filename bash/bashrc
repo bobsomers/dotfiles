@@ -6,9 +6,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Set the umask to be a little more reasonable.
-umask 022
-
 # User specific aliases and functions.
 alias ls='ls --color -lh'
 alias ll='ls --color -lh'
