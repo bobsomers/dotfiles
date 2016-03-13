@@ -17,6 +17,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
 
@@ -215,6 +216,31 @@ let g:airline_powerline_fonts = 1
 
 " Use base16_default theme (tomorrow has broken highlights).
 let g:airline_theme='bubblegum'
+
+" =============================================================================
+"       STARTIFY SETTINGS
+" =============================================================================
+
+" The order sections are displayed.
+let g:startify_list_order = [
+  \ ['   SESSIONS'],
+  \ 'sessions',
+  \ ['   MRU CWD'],
+  \ 'dir',
+  \ ['   MRU FILES'],
+  \ 'files',
+  \ ['   BOOKMARKS'],
+  \ 'bookmarks'
+  \ ]
+
+" The number of files to list.
+let g:startify_files_number = 5
+
+" Automatically save sessions before quitting.
+let g:startify_session_persistence = 1
+
+" Delete buffers when loading a new session.
+let g:startify_session_delete_buffers = 1
 
 " =============================================================================
 "       FILETYPE SETTINGS
