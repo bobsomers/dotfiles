@@ -4,7 +4,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'chriskempson/base16-vim'
+Plug 'baskerville/bubblegum'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
@@ -17,7 +17,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
 
@@ -50,8 +50,7 @@ set background=dark
 set synmaxcol=2048
 
 " Color scheme.
-let base16colorspace=256
-colorscheme base16-default
+colorscheme bubblegum-256-dark
 
 " Highlight current line, but only in the active window.
 augroup CursorLine
@@ -112,7 +111,7 @@ set tags=./tags,tags
 " Various line wrapping and line width settings.
 set nowrap
 set colorcolumn=81
-highlight ColorColumn ctermbg=235
+highlight ColorColumn ctermbg=236
 
 " Fillchars and folding are dumb.
 set fillchars=""
@@ -215,25 +214,8 @@ let g:airline#extensions#tabline#enabled = 1
 " Use Powerline patched fonts.
 let g:airline_powerline_fonts = 1
 
-" Use base16_default theme (tomorow has broken highlights).
-let g:airline_theme='base16_default'
-
-" =============================================================================
-"       CTRL-SPACE SETTINGS
-" =============================================================================
-
-" Use the silver searcher for searching files.
-if executable("ag")
-  let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
-
-" Handle workspaces nicely.
-let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-let g:CtrlSpaceSaveWorkspaceOnExit = 1
-
-" Ctrl-P shortcut for fuzzy file search.
-nnoremap <silent><C-p> :CtrlSpace O<CR>
+" Use base16_default theme (tomorrow has broken highlights).
+let g:airline_theme='bubblegum'
 
 " =============================================================================
 "       FILETYPE SETTINGS
