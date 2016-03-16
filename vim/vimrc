@@ -243,6 +243,13 @@ let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
 
 " =============================================================================
+"       YOUCOMPLETEME SETTINGS
+" =============================================================================
+
+" Turn off the preview window on completions, it's annoying and not helpful.
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" =============================================================================
 "       FILETYPE SETTINGS
 " =============================================================================
 
