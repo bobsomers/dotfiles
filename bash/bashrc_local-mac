@@ -8,9 +8,6 @@ export CLICOLOR=1
 # Use command line vim as the editor.
 export EDITOR=vim
 
-# Search the local and ~/bin directories first, then Homebrew, then the system.
-export PATH=.:~/bin:/usr/local/bin:$PATH
-
 # Source bash completion from homebrew.
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion

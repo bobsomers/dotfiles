@@ -3,7 +3,7 @@ if [ -f /etc/profile ]; then
     . /etc/profile
 fi
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 # User specific aliases and functions.
@@ -15,8 +15,8 @@ alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
 alias uuuuu='cd ../../../../..'
 
-# CWD and ~/bin override system paths. Is this bad? Yes. Do I care? No.
-export PATH=.:~/bin:$PATH
+# ~/bin overrides system paths.
+export PATH=~/bin:$PATH
 
 # Shell prompt shenanigans.
 export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h \[\e[1;32m\]\w\n\[\e[1;37m\]⎩ \[\e[1;36m\]\u \[\e[1;37m\]\$ \[\e[0m\]'
