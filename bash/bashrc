@@ -15,6 +15,11 @@ alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
 alias uuuuu='cd ../../../../..'
 
+# Put cargo/rust/rustup on the PATH if they exist.
+if [ -d "$HOME/.cargo/bin" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # ~/bin overrides system paths.
 export PATH=~/bin:$PATH
 
