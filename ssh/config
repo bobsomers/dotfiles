@@ -42,7 +42,7 @@ Host lish
     IdentityFile ~/.ssh/bsomers_rsa
 
 Host pegasus
-  HostName 172.25.25.33
-  User bsomers
-  IdentityFile ~/.ssh/id_rsa
-  ForwardAgent yes
+    HostName 172.25.25.33
+    User bsomers
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
