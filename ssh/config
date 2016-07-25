@@ -46,3 +46,8 @@ Host pegasus
     User bsomers
     IdentityFile ~/.ssh/id_rsa
     ForwardAgent yes
+
+Host awesomo
+    HostName awesomo
+    User bsomers
+    ForwardAgent yes
