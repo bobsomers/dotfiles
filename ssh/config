@@ -33,18 +33,15 @@ Host udoo
 Host baltar
     Hostname baltar.bobsomers.com
     User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host lish
     HostName lish-fremont.linode.com
     User magicbobert
-    IdentityFile ~/.ssh/bsomers_rsa
 
 Host pegasus
     HostName 172.25.25.33
     User bsomers
-    IdentityFile ~/.ssh/id_rsa
     ForwardAgent yes
 
 Host awesomo
