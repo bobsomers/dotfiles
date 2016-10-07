@@ -48,3 +48,9 @@ Host awesomo
     HostName awesomo
     User bsomers
     ForwardAgent yes
+
+Host rover12
+    #HostName 192.168.123.100
+    HostName 192.168.2.2
+    User bsomers
+    ForwardAgent yes
