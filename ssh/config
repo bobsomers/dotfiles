@@ -1,3 +1,7 @@
+Host *
+    IdentityFile ~/.ssh/id_rsa
+    AddKeysToAgent yes
+
 Host gh
     HostName github.com
     User git
@@ -50,7 +54,7 @@ Host awesomo
     ForwardAgent yes
 
 Host rover12
-    #HostName 192.168.123.100
-    HostName 192.168.2.2
+    HostName 10.11.12.115
+    #HostName 192.168.2.2
     User bsomers
     ForwardAgent yes
