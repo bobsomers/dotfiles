@@ -1,5 +1,5 @@
 # Use keychain to keep ssh keys loaded.
-eval $(keychain --eval --agents ssh --quick --quiet ~/.ssh/bsomers_rsa)
+eval $(keychain --eval --agents ssh --quick --quiet ~/.ssh/id_rsa)
 
 # Keep Chromium's browser cache in RAM tmpfs.
 #export CHROMIUM_USER_FLAGS="--disk-cache-dir=/tmp/chromium-cache"
