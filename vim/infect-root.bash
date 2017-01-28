@@ -2,6 +2,6 @@
 
 echo "Making symlinks."
 ln -f -s ~bsomers/dotfiles/vim/vimrc ~root/.vimrc
-ln -f -s ~bsomers/dotfiles/vim/vimfiles ~root/.vim
+ln -f -s ~bsomers/.vim ~root/.vim
 
 echo "Done."
