@@ -10,28 +10,9 @@ Host bb
     HostName bitbucket.org
     User git
 
-Host fluttershy
-    HostName 172.25.25.2
-    User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
-    ForwardAgent yes
-
 Host rainbowdash
-    Hostname 172.25.25.21
+    Hostname 10.11.12.20
     User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
-    ForwardAgent yes
-
-Host starbuck
-    HostName 172.25.25.3
-    User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
-    ForwardAgent yes
-
-Host udoo
-    HostName 172.25.25.30
-    User bsomers
-    IdentityFile ~/.ssh/bsomers_rsa
     ForwardAgent yes
 
 Host baltar
@@ -39,14 +20,14 @@ Host baltar
     User bsomers
     ForwardAgent yes
 
+Host waystone
+    HostName waystone.bobsomers.com
+    User bsomers
+    ForwardAgent yes
+
 Host lish
     HostName lish-fremont.linode.com
     User magicbobert
-
-Host pegasus
-    HostName 172.25.25.33
-    User bsomers
-    ForwardAgent yes
 
 Host awesomo
     HostName awesomo
@@ -54,7 +35,8 @@ Host awesomo
     ForwardAgent yes
 
 Host rover12
-    HostName 10.11.12.115
-    #HostName 192.168.2.2
+    #HostName 10.11.12.115
+    #HostName 192.168.123.100
+    HostName 192.168.2.2
     User bsomers
     ForwardAgent yes
