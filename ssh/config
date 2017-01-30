@@ -10,13 +10,13 @@ Host bb
     HostName bitbucket.org
     User git
 
-Host rainbowdash
-    Hostname 10.11.12.20
+Host tarbean
+    HostName 10.11.12.30
     User bsomers
     ForwardAgent yes
 
-Host baltar
-    Hostname baltar.bobsomers.com
+Host rainbowdash
+    Hostname 10.11.12.20
     User bsomers
     ForwardAgent yes
 
