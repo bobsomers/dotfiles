@@ -1,6 +1,7 @@
 Host *
     IdentityFile ~/.ssh/id_rsa
     AddKeysToAgent yes
+    ServerAliveInterval 60
 
 Host gh
     HostName github.com
