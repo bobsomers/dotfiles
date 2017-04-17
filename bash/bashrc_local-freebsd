@@ -1,0 +1,13 @@
+# Rewrite a few aliases because Mac is dumb.
+alias ls='ls -lh'
+alias ll='ls -lh'
+
+# Mac uses a enviroment variable to color ls output.
+export CLICOLOR=1
+
+# Use command line vim as the editor.
+export EDITOR=vim
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+# Load bash-completion
+[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion.sh ]] && source /usr/local/share/bash-completion/bash_completion.sh
