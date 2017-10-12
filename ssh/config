@@ -16,11 +16,6 @@ Host tarbean
     User bsomers
     ForwardAgent yes
 
-Host rainbowdash
-    Hostname 10.11.12.20
-    User bsomers
-    ForwardAgent yes
-
 Host waystone
     HostName waystone.bobsomers.com
     User bsomers
@@ -30,14 +25,19 @@ Host lish
     HostName lish-fremont.linode.com
     User magicbobert
 
-Host awesomo
-    HostName awesomo
+Host rover12
+    HostName 10.11.12.115
+    #HostName 192.168.123.100
+    #HostName 192.168.2.2
     User bsomers
     ForwardAgent yes
 
-Host rover12
-    #HostName 10.11.12.115
-    #HostName 192.168.123.100
-    HostName 192.168.2.2
+Host eolian
+    HostName 10.11.12.40
+    User bsomers
+    ForwardAgent yes
+
+Host ademre
+    HostName 10.11.12.60
     User bsomers
     ForwardAgent yes
