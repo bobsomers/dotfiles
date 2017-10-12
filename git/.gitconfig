@@ -5,7 +5,7 @@
     user = bobsomers
 [core]
     autocrlf = input
-    excludesfile = ~/dotfiles/git/gitignore
+    excludesfile = ~/dotfiles/git/.gitignore
 [color]
     ui = true
 [alias]

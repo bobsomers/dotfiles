@@ -11,6 +11,7 @@ function install_packages {
 
 function install_dotfiles {
   pushd ..
+  stow --verbose git
   stow --verbose --no-folding vim
   popd
 }
