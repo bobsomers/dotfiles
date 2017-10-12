@@ -50,7 +50,8 @@ set background=dark
 set synmaxcol=2048
 
 " Color scheme.
-colorscheme bubblegum-256-dark
+" silent! ensures that it doesn't complain if it isn't installed yet
+silent! colorscheme bubblegum-256-dark
 
 " Highlight current line, but only in the active window.
 augroup CursorLine

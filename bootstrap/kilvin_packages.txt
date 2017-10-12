@@ -1,0 +1,3 @@
+git
+stow
+macvim --with-override-system-vim
