@@ -36,6 +36,15 @@ export EDITOR=vim
 # Terminal supports 256 colors.
 export TERM=xterm-256color
 
+# Start ssh-agent if it's not already running and source the vars.
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  ssh-agent > ~/.ssh-agent-env
+  sed -i '$d' ~/.ssh-agent-env
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+  eval "$(<~/.ssh-agent-env)"
+fi
+
 # Source local configuration.
 if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
