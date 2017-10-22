@@ -4,7 +4,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'baskerville/bubblegum'
+Plug 'bobsomers/bubblegum-nobg'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
