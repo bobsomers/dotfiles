@@ -149,7 +149,7 @@ new_window none
 new_float none
 
 # Gaps settings.
-gaps inner 6
+gaps inner 8
 gaps outer 0
 
 # Set wallpaper.
