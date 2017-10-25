@@ -1,0 +1,8 @@
+keycode 72 = XF86MonBrightnessDown F6 F6 F6 F6 F6
+keycode 73 = XF86MonBrightnessUp F7 F7 F7 F7 F7
+keycode 74 = XF86AudioMute F8 F8 F8 F8 F8
+keycode 75 = XF86AudioLowerVolume F9 F9 F9 F9 F9
+keycode 76 = XF86AudioRaiseVolume F10 F10 F10 F10 F10
+clear Mod4
+clear control
+add control = Super_L Control_L Control_R

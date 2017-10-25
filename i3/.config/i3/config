@@ -151,5 +151,8 @@ gaps outer 0
 # Launch compton.
 exec --no-startup-id compton -b
 
+# Launch xcape.
+exec --no-startup-id xcape -e "Super_L=Escape"
+
 # Set wallpaper.
 exec --no-startup-id ~/.fehbg
