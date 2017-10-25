@@ -25,7 +25,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Use rofi to launch programs
-bindsym $mod+d exec rofi -modi window,run,drun -show drun
+bindsym $mod+d exec "rofi -modi window,run,drun -show drun"
 
 # change focus
 bindsym $mod+j focus left
@@ -134,6 +134,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Power button, brightness controls, volume controls.
+bindsym XF86PowerOff exec ~/bin/poweroff-confirm.sh
+bindsym XF86MonBrightnessUp exec ~/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec ~/bin/brightness.sh down
+bindsym XF86AudioMute exec ~/bin/volume.sh mute
+bindsym XF86AudioRaiseVolume exec ~/bin/volume.sh up
+bindsym XF86AudioLowerVolume exec ~/bin/volume.sh down
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -148,11 +156,10 @@ new_float none
 gaps inner 8
 gaps outer 0
 
-# Launch compton.
+# Launch daemons.
 exec --no-startup-id compton -b
-
-# Launch xcape.
 exec --no-startup-id xcape -e "Super_L=Escape"
+exec --no-startup-id volnoti -a 0.9 -r 20
 
 # Set wallpaper.
 exec --no-startup-id ~/.fehbg
