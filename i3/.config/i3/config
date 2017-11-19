@@ -153,7 +153,7 @@ new_window none
 new_float none
 
 # Gaps settings.
-gaps inner 8
+gaps inner 7
 gaps outer 0
 
 # Launch daemons.
