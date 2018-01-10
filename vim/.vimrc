@@ -4,7 +4,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'bobsomers/bubblegum-nobg'
+Plug 'baskerville/bubblegum'
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
@@ -13,10 +13,10 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', {'dir': '~/.fzf','do': './install --key-bindings --completion --no-update-rc'}
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
@@ -196,14 +196,22 @@ nmap <S-F2> :NERDTreeClose<CR>
 let g:EasyMotion_leader_key=',m'
 
 " =============================================================================
-"       INDENTLINE SETTINGS
+"       INDENT GUIDES SETTINGS
 " =============================================================================
 
-" Use soft gray color.
-let g:indentLine_color_term = 238
+" Enable on startup.
+let g:indent_guides_enable_on_vim_startup = 1
 
-" Make them a solid bar.
-let g:indentLine_char = '│'
+" Start at the second indent.
+let g:indent_guides_start_level = 2
+
+" Only use 1 column for highlight.
+let g:indent_guides_guide_size = 1
+
+" Use soft gray colors.
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 
 " =============================================================================
 "       AIRLINE SETTINGS
@@ -235,7 +243,7 @@ let g:startify_list_order = [
   \ ]
 
 " The number of files to list.
-let g:startify_files_number = 5
+let g:startify_files_number = 8
 
 " Automatically save sessions before quitting.
 let g:startify_session_persistence = 1
@@ -244,33 +252,47 @@ let g:startify_session_persistence = 1
 let g:startify_session_delete_buffers = 1
 
 " =============================================================================
-"       CTRL-P SETTINGS
+"       FZF SETTINGS
 " =============================================================================
 
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
+" Map Ctrl-p to open fzf.
+noremap <C-p> :FZF!<CR>
+
+" =============================================================================
+"       SYNTASTIC SETTINGS
+" =============================================================================
+
+" The pylint checker needs anger management therapy.
+let g:syntastic_python_checkers=['pep8']
 
 " =============================================================================
 "       YOUCOMPLETEME SETTINGS
 " =============================================================================
 
 " Turn off the preview window on completions, it's annoying and not helpful.
-let g:ycm_autoclose_preview_window_after_completion = 1
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+
+" Don't confirm when loading configurations. I control my machine. It's fine.
+let g:ycm_confirm_extra_conf = 0
+
+" Load global config from home directory.
+let g:ycm_global_extra_conf='~/.ycm_extra_conf.py'
 
 " =============================================================================
 "       FILETYPE SETTINGS
 " =============================================================================
 
-" ROS .launch files are XML
-au BufNewFile,BufRead *.launch set filetype=xml
+augroup FileTypeAssociation
+  autocmd!
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.launch set filetype=xml
+  autocmd BufNewFile,BufRead *.rosinstall set filetype=yaml
+  autocmd BufNewFile,BufRead WORKSPACE,BUILD,BUILD.*,*.bzl set filetype=python
+  autocmd BufNewFile,BufRead WORKSPACE,BUILD,BUILD.*,*.bzl let b:syntastic_skip_checks = 1
+augroup END
 
-" ROS .rosinstall files are YAML
-au BufNewFile,BufRead *.rosinstall set filetype=yaml
-
-" Bazel WORKSPACE, BUILD, and .bzl files are Python
-au BufNewFile,BufRead WORKSPACE set filetype=python
-au BufNewFile,BufRead BUILD* set filetype=python
-au BufNewFile,BufRead *.bzl set filetype=python
+augroup AutoResizeSplits
+  autocmd!
+  autocmd VimResized * exe "normal! \<c-w>="
+augroup END

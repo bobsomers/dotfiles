@@ -45,6 +45,17 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
   eval "$(<~/.ssh-agent-env)"
 fi
 
+# Load FZF and set config.
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude ".git" --exclude "bazel-*"'
+export FZF_DEFAULT_OPTS='--inline-info --no-height --reverse --preview "[[ $(file --mime {}) =~ binary ]] && ([[ $(file --mime {}) =~ directory ]] && tree -C -L 1 {} || file --brief {}) || (highlight -O ansi -l {} 2> /dev/null || cat {}) | head -200"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_R_OPTS='--inline-info --no-height --reverse --preview "echo {} | sed \"s/^[[:space:]]*[[:digit:]]\\+[[:space:]]*//\"" --preview-window down:5:wrap'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude ".git"'
+export FZF_ALT_C_OPTS='--inline-info --no-height --reverse --preview "tree -C -L 1 {} | head -200"'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Source local configuration.
 if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
