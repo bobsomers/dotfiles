@@ -35,6 +35,8 @@ module-margin-right = 2
 
 font-0 = Roboto:size=10:weight=medium;1
 font-1 = Font Awesome 5 Free:style=Solid:size=12;2
+font-2 = Font Awesome 5 Brands:style=:Regular:size=12;2
+font-3 = Deja Vu Sans:size=10
 
 modules-left = i3
 modules-center = xwindow
