@@ -17,6 +17,7 @@ secondary = #ec3b77
 alert = #bd2c40
 
 [bar/main]
+monitor = DVI-I-1
 width = 100%
 height = 25
 fixed-center = false
@@ -38,9 +39,36 @@ font-1 = Font Awesome 5 Free:style=Solid:size=12;2
 font-2 = Font Awesome 5 Brands:style=:Regular:size=12;2
 font-3 = Deja Vu Sans:size=10
 
-modules-left = i3
+modules-left = i3_main
 modules-center = xwindow
-modules-right = btc cpu memory netdown netup filesystem volume date
+modules-right = cpu memory volume date
+
+[bar/secondary]
+monitor = DVI-D-0
+width = 100%
+height = 25
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Roboto:size=10:weight=medium;1
+font-1 = Font Awesome 5 Free:style=Solid:size=12;2
+font-2 = Font Awesome 5 Brands:style=:Regular:size=12;2
+font-3 = Deja Vu Sans:size=10
+
+modules-left = i3_secondary
+modules-center = xwindow
+modules-right = btc netdown netup filesystem
 
 tray-position = right
 tray-padding = 2
@@ -50,14 +78,48 @@ type = internal/xwindow
 label = %title%
 label-maxlen = 100
 
-[module/i3]
+[module/i3_main]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/i3_secondary]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -101,7 +163,7 @@ label =   %date%  %time%
 [module/volume]
 type = internal/volume
 
-master-soundcard = default
+master-soundcard = hw:0
 master-mixer = Master
 mapped = false
 

@@ -135,9 +135,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Power button, brightness controls, volume controls.
-bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%-"
+bindsym XF86AudioMute exec --no-startup-id "amixer -c 0 set Master toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -c 0 set Master 2%+"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -c 0 set Master 2%-"
 
 # Use 1-pixel borders (no title bars) for all windows.
 new_window none
@@ -148,9 +148,10 @@ gaps inner 9
 gaps outer 0
 
 # Launch daemons.
-exec --no-startup-id compton -b
+exec --no-startup-id compton -b --xinerama-shadow-crop
 exec --no-startup-id xcape -e 'Control_L=Escape'
 exec --no-startup-id polybar main
+exec --no-startup-id polybar secondary
 
 # Set wallpaper.
 exec --no-startup-id ~/.fehbg
