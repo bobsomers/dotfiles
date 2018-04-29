@@ -152,6 +152,8 @@ exec --no-startup-id compton -b
 exec --no-startup-id xcape -e "Super_L=Escape"
 exec --no-startup-id volnoti -a 0.9 -r 20
 exec --no-startup-id polybar main
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
 
 # Set wallpaper.
 exec --no-startup-id ~/.fehbg

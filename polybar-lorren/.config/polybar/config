@@ -8,10 +8,9 @@
 ;=====================================================
 
 [colors]
-background = #bb333e43
-background-alt = #bb414f56
-foreground = #dfdfdf
-foreground-alt = #aaaaaa
+background = #333
+background-alt = #444
+foreground = #bbb
 primary = #3d99e3
 secondary = #ec3b77
 alert = #bd2c40
@@ -33,9 +32,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Roboto:size=10:weight=medium;1
-font-1 = Font Awesome 5 Free:style=Solid:size=12;2
-font-2 = Font Awesome 5 Brands:style=:Regular:size=12;2
+font-0 = Roboto:size=10:weight=medium;2
+font-1 = Font Awesome 5 Free:style=Solid:size=10;2
+font-2 = Font Awesome 5 Brands:style=:Regular:size=10;2
 font-3 = Deja Vu Sans:size=10
 
 modules-left = i3
@@ -44,6 +43,7 @@ modules-right = wlan battery date
 
 tray-position = right
 tray-padding = 2
+tray-background = #333
 
 [module/xwindow]
 type = internal/xwindow
@@ -64,7 +64,7 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = " %index% "
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 2
@@ -90,7 +90,7 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected =  <label-connected>
-format-connected-underline = ${colors.primary}
+;format-connected-underline = ${colors.primary}
 label-connected = %essid%
 
 format-disconnected =
@@ -105,7 +105,7 @@ date-alt = %Y-%m-%d
 time = %I:%M %p
 time-alt = %H:%M
 
-format-underline = ${colors.primary}
+;format-underline = ${colors.primary}
 
 label =   %date%  %time%
 
@@ -116,17 +116,17 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.secondary}
+;format-charging-underline = ${colors.secondary}
 
 label-charging = %percentage%% (%time:0:5%)
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.primary}
+;format-discharging-underline = ${colors.primary}
 
 label-discharging = %percentage%% (%time:0:5%)
 
 format-fill =  <label-full>
-format-full-underline = ${colors.primary}
+;format-full-underline = ${colors.primary}
 
 label-full = %percentage%%
 
