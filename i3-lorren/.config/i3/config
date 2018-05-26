@@ -154,7 +154,7 @@ exec --no-startup-id volnoti -a 0.9 -r 20
 exec --no-startup-id polybar main
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
-exec --no-startup-id xss-lock --transfer-sleep-lock -- lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/bsomers/bin/lock.sh
 
 # Set wallpaper.
 exec --no-startup-id ~/.fehbg
