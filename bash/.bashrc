@@ -33,9 +33,6 @@ export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h \[\e[1;32m\]\w\n\[\e[1
 # Default editor is Vim.
 export EDITOR=vim
 
-# Terminal supports 256 colors.
-export TERM=xterm-256color
-
 # Start ssh-agent if it's not already running and source the vars.
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
   ssh-agent > ~/.ssh-agent-env
