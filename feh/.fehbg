@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-fill '/usr/share/wallpaper/train.jpg' 
+feh --no-fehbg --bg-fill '/usr/share/wallpaper/train.jpg'
