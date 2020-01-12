@@ -20,7 +20,10 @@ Plug 'junegunn/fzf', {'dir': '~/.fzf','do': './install --key-bindings --completi
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 
 call plug#end()
 
