@@ -18,11 +18,17 @@ alias uuu='cd ../../..'
 alias uuuu='cd ../../../..'
 alias uuuuu='cd ../../../../..'
 
+# Similar to "open" on Mac.
+alias open=xdg-open
+
 # Put cargo/rust/rustup on the PATH if they exist.
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
+
+# Use NVM to manage Node versions.
+source /usr/share/nvm/init-nvm.sh
 
 # Use Redis for sccache.
 export SCCACHE_REDIS="redis://:ThisIsTheRedisPassword@university.bobsomers.net"
@@ -35,15 +41,6 @@ export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h \[\e[1;32m\]\w\n\[\e[1
 
 # Default editor is Vim.
 export EDITOR=vim
-
-# Start ssh-agent if it's not already running and source the vars.
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-  ssh-agent > ~/.ssh-agent-env
-  sed -i '$d' ~/.ssh-agent-env
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-  eval "$(<~/.ssh-agent-env)"
-fi
 
 # Load FZF and set config.
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude ".git" --exclude "bazel-*" --exclude ".cache" --exclude ".mozilla" --exclude ".cargo" --exclude ".npm"'
