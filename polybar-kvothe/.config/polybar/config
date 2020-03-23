@@ -8,18 +8,16 @@
 ;=====================================================
 
 [colors]
-background = #bb333e43
-background-alt = #bb414f56
-foreground = #dfdfdf
-foreground-alt = #aaaaaa
+background = #333
+background-alt = #444
+foreground = #bbb
 primary = #3d99e3
 secondary = #ec3b77
 alert = #bd2c40
 
 [bar/main]
-monitor = DVI-I-1
 width = 100%
-height = 25
+height = 30
 fixed-center = false
 
 background = ${colors.background}
@@ -39,94 +37,34 @@ font-1 = Font Awesome 5 Free:style=Solid:size=12;2
 font-2 = Font Awesome 5 Brands:style=:Regular:size=12;2
 font-3 = Deja Vu Sans:size=10
 
-modules-left = i3_main
+modules-left = i3
 modules-center = xwindow
-modules-right = cpu memory volume date
-
-[bar/secondary]
-monitor = DVI-D-0
-width = 100%
-height = 25
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Roboto:size=10:weight=medium;1
-font-1 = Font Awesome 5 Free:style=Solid:size=12;2
-font-2 = Font Awesome 5 Brands:style=:Regular:size=12;2
-font-3 = Deja Vu Sans:size=10
-
-modules-left = i3_secondary
-modules-center = xwindow
-modules-right = btc netdown netup filesystem
+modules-right = cpu memory netdown netup filesystem date
 
 tray-position = right
 tray-padding = 2
+tray-background = #333
 
 [module/xwindow]
 type = internal/xwindow
 label = %title%
 label-maxlen = 100
 
-[module/i3_main]
+[module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+;pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-[module/i3_secondary]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = " %index% "
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 2
@@ -156,29 +94,9 @@ date-alt = %Y-%m-%d
 time = %I:%M %p
 time-alt = %H:%M
 
-format-underline = ${colors.primary}
+;format-underline = ${colors.primary}
 
 label =   %date%  %time%
-
-[module/volume]
-type = internal/volume
-
-master-soundcard = hw:0
-master-mixer = Master
-mapped = false
-
-format-volume = <ramp-volume>  <label-volume>
-format-volume-underline = ${colors.primary}
-
-format-muted = <label-muted>
-format-muted-underline = ${colors.secondary}
-
-label-muted =  mute
-label-muted-foreground = #666
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
 
 [module/netdown]
 type = internal/network
@@ -186,10 +104,10 @@ interface = eno1
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = ${colors.primary}
+;format-connected-underline = ${colors.primary}
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.secondary}
+;format-disconnected-underline = ${colors.secondary}
 
 label-connected =   %downspeed%
 label-disconnected =  
@@ -201,10 +119,10 @@ interface = eno1
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline = ${colors.primary}
+;format-connected-underline = ${colors.primary}
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.secondary}
+;format-disconnected-underline = ${colors.secondary}
 
 label-connected =   %upspeed%
 label-disconnected =  
@@ -215,7 +133,7 @@ type = internal/cpu
 interval = 0.5
 
 format =   <ramp-coreload>
-format-underline = ${colors.primary}
+;format-underline = ${colors.primary}
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -231,7 +149,7 @@ type = internal/memory
 interval = 3.0
 
 format =   <label>
-format-underline = ${colors.primary}
+;format-underline = ${colors.primary}
 
 label = %gb_used%
 
@@ -243,17 +161,9 @@ fixed-values = true
 mount-0 = /
 
 format-mounted =   <label-mounted>
-format-mounted-underline = ${colors.primary}
+;format-mounted-underline = ${colors.primary}
 
 label-mounted = %free%
-
-[module/btc]
-type = custom/script
-interval = 300
-exec = /home/bsomers/.config/polybar/btc-ticker.sh
-
-format =   <label>
-format-underline = ${colors.primary}
 
 [settings]
 screenchange-reload = true
