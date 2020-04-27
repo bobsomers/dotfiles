@@ -5,11 +5,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'baskerville/bubblegum'
-
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'tikhomirov/vim-glsl', {'for': 'glsl'}
-Plug 'cespare/vim-toml', {'for': 'toml'}
-
+Plug 'sheerun/vim-polyglot'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -282,6 +278,17 @@ let g:ycm_confirm_extra_conf = 0
 
 " Load global config from home directory.
 let g:ycm_global_extra_conf='~/.ycm_extra_conf.py'
+
+" Use rust-analyzer as our Rust language server.
+let g:ycm_language_server =
+  \ [
+  \   {
+  \     'name': 'rust',
+  \     'cmdline': ['rust-analyzer'],
+  \     'filetypes': ['rust'],
+  \     'project_root_files': ['Cargo.toml']
+  \   }
+  \ ]
 
 " =============================================================================
 "       FILETYPE SETTINGS
