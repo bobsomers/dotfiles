@@ -24,6 +24,9 @@ if [ -d "$HOME/.cargo/bin" ]; then
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
+# Use Redis for sccache.
+export SCCACHE_REDIS="redis://:ThisIsTheRedisPassword@university.bobsomers.net"
+
 # ~/bin overrides system paths.
 export PATH=~/bin:$PATH
 
