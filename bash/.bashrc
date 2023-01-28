@@ -1,17 +1,37 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Source global definitions.
-if [ -f /etc/profile ]; then
-    . /etc/profile
+# Are we on Mac?
+OS="$(uname -s)"
+
+# Source global definitions on Linux.
+if [ "$OS" == "Linux" ]; then
+  if [ -f /etc/profile ]; then
+      . /etc/profile
+  fi
+  if [ -f /etc/bashrc ]; then
+      . /etc/bashrc
+  fi
 fi
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
+
+# Load the homebrew envvars and bash completion on Mac.
+if [ "$OS" == "Darwin" ]; then
+  SHELL="/opt/homebrew/bin/bash"  # WHAT THE HELL ALACRITTY
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 fi
 
 # User specific aliases and functions.
-alias ls='ls --color -lh'
-alias ll='ls --color -lh'
+if [ "$OS" == "Darwin" ]; then
+  export CLICOLOR=1
+  export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+  alias ls='ls -lh'
+  alias ll='ls -lh'
+fi
+if [ "$OS" == "Linux" ]; then
+  alias ls='ls --color -lh'
+  alias ll='ls --color -lh'
+fi
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
@@ -19,7 +39,9 @@ alias uuuu='cd ../../../..'
 alias uuuuu='cd ../../../../..'
 
 # Similar to "open" on Mac.
-alias open=xdg-open
+if [ "$OS" == "Linux" ]; then
+  alias open=xdg-open
+fi
 
 # Put cargo/rust/rustup on the PATH if they exist.
 if [ -d "$HOME/.cargo/bin" ]; then
@@ -27,11 +49,8 @@ if [ -d "$HOME/.cargo/bin" ]; then
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
-# Use NVM to manage Node versions.
-source /usr/share/nvm/init-nvm.sh
-
 # Use Redis for sccache.
-export SCCACHE_REDIS="redis://:ThisIsTheRedisPassword@university.bobsomers.net"
+# export SCCACHE_REDIS="redis://:ThisIsTheRedisPassword@university.bobsomers.net"
 
 # ~/bin overrides system paths.
 export PATH=~/bin:$PATH
@@ -41,6 +60,9 @@ export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h \[\e[1;32m\]\w\n\[\e[1
 
 # Default editor is Vim.
 export EDITOR=vim
+
+# Set syntax theme for bat and delta.
+export BAT_THEME=1337
 
 # Load FZF and set config.
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude ".git" --exclude "bazel-*" --exclude ".cache" --exclude ".mozilla" --exclude ".cargo" --exclude ".npm"'
@@ -53,7 +75,6 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude ".git" --exclu
 export FZF_ALT_C_OPTS='--inline-info --no-height --reverse --preview "tree -C -L 1 {}"'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Source local configuration.
-if [ -f ~/.bashrc_local ]; then
-    . ~/.bashrc_local
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

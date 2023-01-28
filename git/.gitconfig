@@ -23,3 +23,17 @@
     autosetuprebase = always
 [pull]
     rebase = true
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[delta]
+    side-by-side = true
+    navigate = true
+    whitespace-error-style = 22 reverse
+[interactive]
+    diffFilter = delta --color-only
+[safe]
+	directory = /Users/bsomers/janet-lang/jpm
+	directory = /opt/homebrew/Cellar/janet/1.21.2/lib/janet/.cache/git__https___github.com_janet-lang_pkgs.git
