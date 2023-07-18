@@ -55,8 +55,19 @@ fi
 # ~/bin overrides system paths.
 export PATH=~/bin:$PATH
 
+# Add virtualenv to shell in a nice place if we're in one.
+function venv_info {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    venv="$(basename $(dirname $VIRTUAL_ENV))"
+    echo " [venv:$venv]"
+  else
+    echo ""
+  fi
+}
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # Shell prompt shenanigans.
-export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h \[\e[1;32m\]\w\n\[\e[1;37m\]⎩ \[\e[1;36m\]\u \[\e[1;37m\]\$ \[\e[0m\]'
+export PS1='\[\e[1;37m\]⎧ \[\e[1;33m\]\@ \[\e[1;35m\]\h\[\e[1;31m\]$(venv_info) \[\e[1;32m\]\w\n\[\e[1;37m\]⎩ \[\e[1;36m\]\u \[\e[1;37m\]\$ \[\e[0m\]'
 
 # Default editor is Vim.
 export EDITOR=vim
