@@ -8,6 +8,7 @@ Plug 'baskerville/bubblegum'
 Plug 'sheerun/vim-polyglot'
 Plug 'janet-lang/janet.vim'
 Plug 'ollykel/v-vim'
+Plug 'lluchs/vim-wren'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -306,7 +307,7 @@ augroup FileTypeAssociation
   autocmd BufNewFile,BufRead *.rosinstall set filetype=yaml
   autocmd BufNewFile,BufRead WORKSPACE,BUILD,BUILD.*,*.bzl set filetype=python
   autocmd BufNewFile,BufRead WORKSPACE,BUILD,BUILD.*,*.bzl let b:syntastic_skip_checks = 1
-  autocmd BufNewFile,BufRead *.wren set filetype=dart
+"  autocmd BufNewFile,BufRead *.wren set filetype=dart
 augroup END
 
 augroup AutoResizeSplits
